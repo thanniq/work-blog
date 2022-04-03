@@ -47,9 +47,9 @@ params:
   # Site Author
   author: Thanni
   # Author biography
-  bio: Digital Creator
+  bio: Journal
   # Site Description, used in HTML meat
-  description: Meditations, Digital Media & Indiehacking
+  description: Meditations, Software & Music
 
 
   ###########################################
