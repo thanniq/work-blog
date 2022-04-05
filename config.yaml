@@ -1,6 +1,6 @@
 baseURL: https://realthanni.com
 languageCode: en-us
-title: Thanni
+title: Thanni's Journal
 theme: mini
 
 # Default content language, support en (English) / zh (Chinese) / nl (Dutch) / fr (French) / es (Spanish), default 'en'
@@ -47,9 +47,9 @@ params:
   # Site Author
   author: Thanni
   # Author biography
-  bio: Digital Creator
+  bio: Meditations, Software & Arts
   # Site Description, used in HTML meat
-  description: Meditations, Software & Music
+  description: Meditations, Software & Arts
 
 
   ###########################################
