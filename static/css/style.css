@@ -109,6 +109,8 @@ h4:hover a {
 .highlight pre {
   padding: 7px;
   overflow-x: auto;
+  background-color: #141618 !important;
+  color: #d3d3d3;
 }
 
 .highlight {
@@ -484,15 +486,15 @@ nav.navigation a.button {
 
 #tags .tag a {
   /* background: #f2f2f2; */
-  background: #F4FAFE;
+  background: #F2F2F2;
   padding: 4px 7px;
   color: #757575;
-  color: #404040;
+  /* color: #404040; */
   font-size: 14px;
   margin-right: 3px;
 }
 #tags .tag a:hover {
-  color: #0366d6;
+  color: #404040;
 }
 
 /* section page */
