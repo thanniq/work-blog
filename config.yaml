@@ -35,9 +35,10 @@ markup:
 social:
   # e.g.
   github: https://github.com/realthanni
-  spotify: "#"
-  youtube: "#"
-  # twitter: your-github-link
+  spotify: https://spotify.com/
+  youtube: https://youtube.com/
+  twitter: https://twitter.com/realthanni
+  instagram: https://instagram.com/realthanni
   #stackoverflow: your-github-link
   # facebook: your-facebook-link
 
