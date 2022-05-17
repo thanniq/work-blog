@@ -2,9 +2,12 @@ html[theme='dark-mode'] {
   filter: invert(1) hue-rotate(180deg);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200&display=swap');
+
 body {
   line-height: 1;
-  font: normal 15px/1.5em 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font: normal 15px/1.5em 'Inter', sans-serif;
+  /* 'Helvetica Neue', Helvetica, Arial, sans-serif; */
   color: #404040;
   line-height: 1.75;
   letter-spacing: 0.008em;
