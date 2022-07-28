@@ -1,6 +1,6 @@
-baseURL: https://thannidev.github.io/personal-blog/
+baseURL: https://thannidev.github.io/personal-blog
 languageCode: en-us
-title: Thanni's Journal
+title: Thanni
 theme: mini
 
 # Default content language, support en (English) / zh (Chinese) / nl (Dutch) / fr (French) / es (Spanish), default 'en'
