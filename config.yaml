@@ -1,4 +1,4 @@
-baseURL: https://thannidev.github.io/
+baseURL: https://thanni.blog
 languageCode: en-us
 title: Thanni's Journal
 theme: mini
@@ -35,10 +35,10 @@ markup:
 social:
   # e.g.
   # github: https://github.com/realthanni
-  spotify: https://spotify.com/
-  youtube: https://youtube.com/
-  twitter: https://twitter.com/realthanni
-  instagram: https://instagram.com/realthanni
+  # spotify: https://spotify.com/
+  # youtube: https://youtube.com/
+  # twitter: https://twitter.com/realthanni
+  # instagram: https://instagram.com/realthanni
   #stackoverflow: your-github-link
   # facebook: your-facebook-link
 
@@ -48,7 +48,7 @@ params:
   # Site Author
   author: Thanni
   # Author biography
-  bio: 
+  bio: 🧘🏽💻💰
   # Site Description, used in HTML meat
   description: Public Journal
 
