@@ -155,7 +155,8 @@ nav.navigation a {
   right: 6px;
   padding: 8px 12px;
   /* color: #5badf0; */
-  color: #0366d6;
+  /* color: #0366d6; */
+  color: #404040;
   font-size: 13px;
   line-height: 1.35;
   border-radius: 3px;
@@ -546,4 +547,12 @@ nav.navigation a.button {
   position: relative;
   top: 1px;
   color: #bbb;
+}
+
+.next > a, .prev > a {
+  color:#404040;
+}
+
+.next > a:hover, .prev > a:hover {
+  color:#0366d6;
 }
