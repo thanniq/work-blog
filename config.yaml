@@ -34,11 +34,12 @@ markup:
 # Social links in footer, support github,twitter,stackoverflow,facebook
 social:
   # e.g.
-  # github: https://github.com/realthanni
-  # spotify: https://spotify.com/
-  # youtube: https://youtube.com/
-  # twitter: https://twitter.com/realthanni
-  # instagram: https://instagram.com/realthanni
+  # github: https://github.com/thannidev
+  spotify: https://spotify.com/
+  youtube: https://youtube.com/
+  twitter: https://twitter.com/
+  instagram: https://instagram.com/
+  # dribbble: https://instagram.com/thannidesign
   #stackoverflow: your-github-link
   # facebook: your-facebook-link
 
@@ -49,6 +50,8 @@ params:
   author: Thanni
   # Author biography
   bio: 🧘🏽‍♂️💻💰
+  # bio: 🧘🏽‍♂️📚✈️ | Current📍 ~ 🇳🇬
+  # bio: 🧘🏽‍♂️💻🎵🎭🎙📸
   # Site Description, used in HTML meat
   description: Public Journal
 
