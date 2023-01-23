@@ -75,7 +75,7 @@ params:
   # To hidden post summary in home page, you could set `hiddenPostSummaryInHomePage: true`, default is `false`
   hiddenPostSummaryInHomePage: false
   # Website copy write, default: '© Copyright 2021 {params.author}'
-  copyright: © Copyright 2022 Thanni
+  copyright: © Copyright 2023 Thanni
 
   # Extra links in navigation
   links:

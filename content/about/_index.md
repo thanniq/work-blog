@@ -7,4 +7,5 @@ author = "Hugo Authors"
 enableComments = false
 +++
 
-Thanni is a Nigerian writer, musician, programmer and entrepreneur.
+Thanni is a technical writer and software developer. Got a one-off or consistent writing request? Get in touch.
+
