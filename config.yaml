@@ -1,6 +1,6 @@
-baseURL: https://bythanni.github.io
+baseURL: https://thanni.blog
 languageCode: en-us
-title: No Distraction Z
+title: Thanni
 theme: mini
 
 # Default content language, support en (English) / zh (Chinese) / nl (Dutch) / fr (French) / es (Spanish), default 'en'
@@ -34,10 +34,10 @@ markup:
 # Social links in footer, support github,twitter,stackoverflow,facebook
 social:
   # e.g.
-  # github: https://github.com/bythanni
-  spotify: #
+  github: https://github.com/bythanni
+  # spotify: https://spotify.com/
   # youtube: https://youtube.com/
-  twitter: #
+  # twitter: https://twitter.com/
   # instagram: https://instagram.com/
   # dribbble: https://instagram.com/thannidesign
   #stackoverflow: your-github-link
@@ -49,11 +49,11 @@ params:
   # Site Author
   author: Thanni
   # Author biography
-  bio: Journal
+  bio: Tech & Marketing Tinkerer
   # bio: 🧘🏽‍♂️📚✈️ | Current📍 ~ 🇳🇬
   # bio: 🧘🏽‍♂️💻🎵🎭🎙📸
   # Site Description, used in HTML meat
-  description: Community for Clarity and Execution
+  description: Work Journal
 
 
   ###########################################
@@ -75,7 +75,7 @@ params:
   # To hidden post summary in home page, you could set `hiddenPostSummaryInHomePage: true`, default is `false`
   hiddenPostSummaryInHomePage: false
   # Website copy write, default: '© Copyright 2021 {params.author}'
-  copyright: © Copyright 2023 NDZ
+  copyright: © Copyright 2022 Thanni
 
   # Extra links in navigation
   links:
