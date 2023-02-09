@@ -6,7 +6,6 @@ theme: mini
 # Default content language, support en (English) / zh (Chinese) / nl (Dutch) / fr (French) / es (Spanish), default 'en'
 defaultContentLanguage: en
 
-
 hasCJKLanguage: true
 permalinks:
   posts: /:title/
@@ -43,18 +42,16 @@ social:
   #stackoverflow: your-github-link
   # facebook: your-facebook-link
 
-
 # Site parameters
 params:
   # Site Author
   author: Thanni
   # Author biography
-  bio: Technical Writer
+  bio: Tech & CX Writer
   # bio: 🧘🏽‍♂️📚✈️ | Current📍 ~ 🇳🇬
   # bio: 🧘🏽‍♂️💻🎵🎭🎙📸
   # Site Description, used in HTML meat
   description: Work Journal
-
 
   ###########################################
   # Optional Configuration
@@ -84,7 +81,7 @@ params:
     #   path: /project
 
   # You can put your custom css and js to `static` directory, or use remote css and js files which start with `http://` or `https://`
-  customCSS: 
+  customCSS:
     # - css/custom.css
     ## e.g.
     # - css/custom.css # local css in `static/css/custom.css`
