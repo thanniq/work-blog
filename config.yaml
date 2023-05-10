@@ -12,7 +12,7 @@ permalinks:
 
 paginate: 3
 
-googleAnalytics: UA-153549602-1
+# googleAnalytics: UA-153549602-1
 # disqusShortname: your-disqus-shortname
 
 # Hugo Configure Markup
@@ -33,7 +33,7 @@ markup:
 # Social links in footer, support github,twitter,stackoverflow,facebook
 social:
   # e.g.
-  github: https://github.com/bythanni
+  github: https://github.com/thanniq
   # spotify: https://spotify.com/
   # youtube: https://youtube.com/
   # twitter: https://twitter.com/
