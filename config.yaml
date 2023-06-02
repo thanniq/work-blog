@@ -47,11 +47,11 @@ params:
   # Site Author
   author: Thanni
   # Author biography
-  bio: Tech & CX Writer
+  bio: Web3 Technical Writer
   # bio: 🧘🏽‍♂️📚✈️ | Current📍 ~ 🇳🇬
   # bio: 🧘🏽‍♂️💻🎵🎭🎙📸
   # Site Description, used in HTML meat
-  description: Work Journal
+  description: Work blog
 
   ###########################################
   # Optional Configuration
