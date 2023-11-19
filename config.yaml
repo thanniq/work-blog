@@ -1,6 +1,6 @@
 baseURL: https://blog.thanni.co
 languageCode: en-us
-title: Thanni
+title: Thanni - Software Engineer
 theme: mini
 
 # Default content language, support en (English) / zh (Chinese) / nl (Dutch) / fr (French) / es (Spanish), default 'en'
@@ -47,11 +47,11 @@ params:
   # Site Author
   author: Thanni
   # Author biography
-  bio: Technical Writer
+  bio: Learning Notes
   # bio: 🧘🏽‍♂️📚✈️ | Current📍 ~ 🇳🇬
   # bio: 🧘🏽‍♂️💻🎵🎭🎙📸
   # Site Description, used in HTML meat
-  description: Work blog
+  description: Learning and Blog Content
 
   ###########################################
   # Optional Configuration
