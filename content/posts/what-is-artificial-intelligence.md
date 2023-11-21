@@ -1,10 +1,10 @@
 +++
 author = "Thanni"
-title = "Artificial Intelligence Fundamentals"
-date = "2023-11-18"
+title = "What is Artificial Intelligence?"
+date = "2023-11-20"
 description = "A beginner's guide to AI"
 tags = [
-    "AI",
+    "AI-notes",
 ]
 categories = [
     "How it works",
@@ -12,11 +12,11 @@ categories = [
 series = ["Explain like I'm 5"]
 +++
 
-Discover AI's core principles, from machine learning to neural networks. This concise guide offers essential insights, making it perfect for quick understanding of fundamental artificial intelligence concepts.
+From self-driving cars to medical diagnosis, AI's impact is permeating our lives, shaping the future of technology and society.
 
 <!--more-->
 
-The note you're about to read is taken from this [AI fundamentals course](https://www.datacamp.com/tracks/ai-fundamentals) on Datacamp
+See [all notes](https://blog.thanni.co/artificial-intelligence-fundamentals/) on this series
 
 ## What AI can do
 
