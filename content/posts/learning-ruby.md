@@ -49,15 +49,53 @@ Hello, Thanni!
 We can also have a function with multiple parameters.
 
 ```ruby
-def say(greeting, username)
+def say_hello(greeting, username)
   puts "#{greeting}, #{username}!"
 end
 ```
 
-Let's call the function with arguments- `say_hello("Good morning", "Thanni")`
+Call the function with arguments- `say_hello("Good morning", "Thanni")`
 
 ```
 Good morning, Thanni!
 ```
 
-<mark>Learning in progress</mark>
+What if you called a function with one argument, instead of two? That's why we can assign default values to our parameters.
+
+```ruby
+def say(greeting = "Hello", username)
+  put "#{greeting}, #{username}"
+end
+```
+
+Call the function - `say_hello ("Thanni")`
+
+```
+Hello, Thanni
+```
+
+The arguments we've used so far are positional, i.e they are matched in order defined by the method. To be able to pass arguments in any order, we use keyword arguments.
+
+```ruby
+def example_method(x:, y:)
+  puts "x: #{x}, y: #{y}"
+end
+
+example_method(y: 2, x: 1) # Keyword arguments
+```
+
+Methods return values by default. If the "return" keyword is not explicitly used, the last line in the function block is evaluated.
+
+```ruby
+def some_method
+  2 + 2
+  puts "Hello"
+  5 + 5
+end
+
+some_method
+```
+
+```
+10
+```
