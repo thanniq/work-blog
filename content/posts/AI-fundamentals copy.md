@@ -1,6 +1,6 @@
 +++
 author = "Thanni"
-title = "Artificial Intelligence Fundamentals"
+title = "Artificial Intelligence Fundamentals ⭐️"
 date = "2023-11-18"
 description = "A beginner's guide to AI"
 tags = [

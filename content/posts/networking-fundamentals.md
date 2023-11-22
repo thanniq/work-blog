@@ -4,7 +4,7 @@ title = "Networking Fundamentals: Network Devices"
 date = "2023-05-11"
 description = "A beginner's guide to networking"
 tags = [
-    "networking",
+    "Networking",
 ]
 categories = [
     "How it works",

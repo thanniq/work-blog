@@ -1,7 +1,7 @@
 +++
 author = "Thanni"
 title = "Tasks AI Can Solve"
-date = "2023-11-21"
+date = "2023-11-20"
 description = "A beginner's guide to AI"
 tags = [
     "AI-notes",
@@ -12,12 +12,60 @@ categories = [
 series = ["Explain like I'm 5"]
 +++
 
-An algorithm is a set of instructions to solve a problem or perform an action. The flow would be something like - `Inputs => Process => Outputs`
+## Algorithms and AI systems
+
+An algorithm is a set of instructions to solve a problem or perform an action. The flow would be something like - `Inputs => Process => Outputs`.
 
 Algorithms in computer science have a rigid, input-output behaviour. AI algorithms learn by themselves to produce better outputs.
 
 <!--more-->
 
-See [all notes](https://blog.thanni.co/artificial-intelligence-fundamentals/) on this series
-
 An AI system encompasses the inputs, AI algorithm, hardware, database, outputs and more.
+
+## Acquiring Data
+
+More than just acquiring data, AI learn and reason from data to give output in form of decisions and insights.
+
+AI collects data through sensors, emulating human senses. Then it transforms these perceptions into data.
+
+- **NLP and audio**: capturing speech, sounds
+- **Computer vision**: satellite images, fingerprint, etc
+- **Robotics and sensors**: temperature, touch, motion, gravity, etc
+
+Most AI applications today rely on datasets that are automatically collected.
+
+## Learning from Data
+
+With machine learning, AI learn from data to identify patterns, make predictions, clusters and classifications. Machine learning do these with different techniques:
+
+- Supervised learning
+- Unsupervised learning
+- Reinforcement learning
+
+### Supervised Learning
+
+**Classification**: There's binary classification (male/female) and multi-class classification, which considers several mutually exclusive factors. During supervised learning, data annoation is employed to label data. Decision tree, support vector machine and random forest are examples of supervised learning models.
+
+**Regression**: Deals with quantitative data, where models are built on mathematical computation. An example is looking at a house attributes to determine its price.
+
+**Time series forecasting**: Training models to predict values based on its past behaviour.
+
+### Unsupervised Learning
+
+**Clustering**: Subgroups of data with similar charateristics
+
+**Anomaly detection**: Detecting abnormal data observation e.g unauthorized card txns
+
+**Association rule discovery**: Identify common occurences in txn data
+
+### Reinforcement Learning
+
+Learning by experience through trial and error.
+
+## Deep Learning
+
+Models built on neural networks. They solve extremely challenging tasks that may be hard to solve by classical ML models.
+
+👉🏽 See [all notes](https://blog.thanni.co/artificial-intelligence-fundamentals/) in this series
+
+<mark>Learning in progress</mark>

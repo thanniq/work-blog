@@ -1,7 +1,7 @@
 +++
 author = "Thanni"
 title = "What is Artificial Intelligence?"
-date = "2023-11-20"
+date = "2023-11-18"
 description = "A beginner's guide to AI"
 tags = [
     "AI-notes",
@@ -15,8 +15,6 @@ series = ["Explain like I'm 5"]
 From self-driving cars to medical diagnosis, AI's impact is permeating our lives, shaping the future of technology and society.
 
 <!--more-->
-
-See [all notes](https://blog.thanni.co/artificial-intelligence-fundamentals/) on this series
 
 ## What AI can do
 
@@ -72,4 +70,4 @@ AI is not automation as most people think, but it helps improve it
 - Maths & statistics
 - Psychology, physics, ethics, law
 
-<mark>Learning in progress</mark>
+👉🏽 See [all notes](https://blog.thanni.co/artificial-intelligence-fundamentals/) in this series
