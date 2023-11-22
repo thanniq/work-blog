@@ -66,6 +66,42 @@ Learning by experience through trial and error.
 
 Models built on neural networks. They solve extremely challenging tasks that may be hard to solve by classical ML models.
 
-👉🏽 See [all notes](https://blog.thanni.co/artificial-intelligence-fundamentals/) in this series
+Here are five different real-world applications of deep learning:
 
-<mark>Learning in progress</mark>
+1. Design an original t-shirt.
+2. Find out the shopping style that best describes you.
+3. Write a Cervantes novel-style fictitious piece of text.
+4. Dynamically assign hotel room and flight prices in a booking portal.
+5. Unlock your cellphone with your face.
+
+## Interacting with the Physical Environment
+
+These areas involve the AI interacting with the physical environment.
+
+- Robotics
+- Computer vision
+- Natural language processing
+
+### Robotics
+
+Subareas include:
+
+- Sensing and perception
+- Mobility
+- Manipulation
+- Human-robot interaction
+
+### Computer Vision
+
+- Image processing
+- Object detection
+- Motion analysis
+- Image and video generation
+
+### Natural Language Processing
+
+**Text-based**: Classification, sentiment analysis, question answering(chat bots), and summarization.
+
+**Speech-based**: Text-to-speech and speech-to-text
+
+👉🏽 See [all notes](https://blog.thanni.co/artificial-intelligence-fundamentals/) in this series

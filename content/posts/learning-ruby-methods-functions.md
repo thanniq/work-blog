@@ -4,7 +4,7 @@ title = "Learning Ruby: Methods & Functions"
 date = "2023-11-21"
 description = "Learning Ruby"
 tags = [
-    "Ruby",
+    "ruby-notes",
 ]
 categories = [
     "Tutorial",
@@ -15,8 +15,6 @@ series = ["BackEnd Development"]
 Methods are a way to encapsulate and provide names for ruby expressions. It helps avoid code duplication, so we can keep calling the same methods when we need them.
 
 <!--more-->
-
-_This note is taken from the [Ruby on Rails Course](https://gorails.com/start) on Gorails_
 
 There are built-in methods like uncase and downcase. But we can create our own methods too.
 
@@ -99,3 +97,5 @@ some_method
 ```
 10
 ```
+
+👉🏽 See [all notes](https://blog.thanni.co/learning-ruby) in this series

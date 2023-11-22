@@ -1,7 +1,7 @@
 +++
 author = "Thanni"
 title = "What is Artificial Intelligence?"
-date = "2023-11-18"
+date = "2023-11-19"
 description = "A beginner's guide to AI"
 tags = [
     "AI-notes",
