@@ -1,7 +1,7 @@
 +++
 author = "Thanni"
 title = "Networking Fundamentals: Network Devices"
-date = "2023-05-11"
+date = "2023-11-21"
 description = "A beginner's guide to networking"
 tags = [
     "networking",
