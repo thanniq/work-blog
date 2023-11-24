@@ -33,7 +33,7 @@ markup:
 # Social links in footer, support github,twitter,stackoverflow,facebook
 social:
   # e.g.
-  github: https://github.com/thanniq
+  github: https://github.com/
   # spotify: https://spotify.com/
   # youtube: https://youtube.com/
   # twitter: https://twitter.com/
