@@ -12,12 +12,6 @@ categories = [
 series = ["BackEnd Development"]
 +++
 
-Methods are a way to encapsulate and provide names for ruby expressions. It helps avoid code duplication, so we can keep calling the same methods when we need them.
-
-<!--more-->
-
-## Classes
-
 Classes in ruby are first-class objects. Each is an instance of class `Class`
 
 A class can be defined simply as:
@@ -26,6 +20,10 @@ A class can be defined simply as:
 class House
 end
 ```
+
+<!--more-->
+
+## Classes
 
 To make an instance of `House`
 
