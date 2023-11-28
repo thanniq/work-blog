@@ -18,6 +18,6 @@ Learn the fundamentals of Ruby programming, exploring its syntax, features, and 
 
 _This note is taken from the [Ruby on Rails Course](https://gorails.com/start) on Gorails_
 
-[Lesson 7: Learning Ruby: Methods & Functions](https://blog.thanni.co/learning-ruby-methods-functions/)
+[Lesson 7: Learning Ruby: Methods & Functions](https://notes.thanni.co/learning-ruby-methods-functions/)
 
 <mark>Learning in progress</mark>

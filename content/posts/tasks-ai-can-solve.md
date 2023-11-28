@@ -104,4 +104,4 @@ Subareas include:
 
 **Speech-based**: Text-to-speech and speech-to-text
 
-👉🏽 See [all notes](https://blog.thanni.co/artificial-intelligence-fundamentals/) in this series
+👉🏽 See [all notes](https://notes.thanni.co/artificial-intelligence-fundamentals/) in this series

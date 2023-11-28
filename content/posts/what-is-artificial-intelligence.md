@@ -70,4 +70,4 @@ AI is not automation as most people think, but it helps improve it
 - Maths & statistics
 - Psychology, physics, ethics, law
 
-👉🏽 See [all notes](https://blog.thanni.co/artificial-intelligence-fundamentals/) in this series
+👉🏽 See [all notes](https://notes.thanni.co/artificial-intelligence-fundamentals/) in this series

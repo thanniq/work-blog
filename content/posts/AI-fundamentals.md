@@ -18,8 +18,8 @@ Discover AI's core principles, from machine learning to neural networks. This gu
 
 NB: These notes are taken from the [AI fundamentals course](https://www.datacamp.com/tracks/ai-fundamentals) on Datacamp
 
-[Lesson 1: What is artificial intelligence?](https://blog.thanni.co/what-is-artificial-intelligence/)
+[Lesson 1: What is artificial intelligence?](https://notes.thanni.co/what-is-artificial-intelligence/)
 
-[Lesson 2: Tasks AI Can Solve?](https://blog.thanni.co/tasks-ai-can-solve/)
+[Lesson 2: Tasks AI Can Solve?](https://notes.thanni.co/tasks-ai-can-solve/)
 
 <mark>Learning in progress</mark>
