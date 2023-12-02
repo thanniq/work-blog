@@ -1,7 +1,7 @@
 +++
 author = "Thanni"
 title = "Typescript Crash Course"
-date = "2023-11-26"
+date = "2023-12-01"
 description = "Typescript"
 tags = [
     "typescript",
