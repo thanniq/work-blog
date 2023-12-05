@@ -240,3 +240,235 @@ newUser.push({ user: "John", age: 30 });
 
 console.log(newUser);
 ```
+
+### Index Type
+
+Allows you to access the types of properties of other types you've already created.
+
+We could assign types by accessing type values using their indexes
+
+```typescript
+type User = {
+  user: "Thanni";
+  age: 25;
+  skillLevel: "Beginner" | "Intermediate" | "Advanced";
+};
+
+function printSkillLevel(skillLevel: User["skillLevel"]) {
+  console.log(skillLevel);
+}
+```
+
+Accessing types as object types
+
+```typescript
+type User = {
+  user: string;
+  age: 25;
+  skillLevel: "Beginner" | "Intermediate" | "Advanced";
+};
+
+type groupSkillLevel = {
+  [index: string]: User[];
+};
+
+// or
+
+type User = {
+  user: string;
+  age: 25;
+  skillLevel: "Beginner" | "Intermediate" | "Advanced";
+};
+
+type groupSkillLevel = {
+  [index in User["skillLevel"]]: User[];
+};
+```
+
+### Const
+
+In Ts, `let a = 1` - the type inferred as a number. However, `const a = 1` - the type is not inferred at all. Behind the scenes, it is denoted as `const a = 1 as const`. The same thing applies to `let a = 1 as const`
+
+### Tuple
+
+```typescript
+type Tuple = [string, number, boolean];
+
+const a: Tuple = ["Thanni", 25, true];
+```
+
+### Generics
+
+Generics helps us be more precise about the output type. It's encapsulated in angle brackets `<type>`
+
+```typescript
+type APIResponse<Tdata> = {
+  status: number;
+  type: string;
+  data: Tdata;
+};
+
+const response1: APIResponse<{ name: string }> = {
+  status: 200,
+  type: "good",
+  data: { name: "Thanni" },
+};
+
+const response2: APIResponse<string[]> = {
+  status: 200,
+  type: "good",
+  data: ["Thanni", "Thanni"],
+};
+```
+
+They can also have default values
+
+```typescript
+type APIResponse<Tdata = { name: string }> = {
+  status: number;
+  type: string;
+  data: Tdata;
+};
+
+const response1: APIResponse = {
+  status: 200,
+  type: "good",
+  data: { name: "Thanni" },
+};
+```
+
+If we want the generics to be restricted to only one type, we use the `extend` keyword. In the example below, the generic must only be an object.
+
+```typescript
+type APIResponse<Tdata extends object> = {
+  status: number;
+  type: string;
+  data: Tdata;
+};
+
+const response1: APIResponse<{ name: string }> = {
+  status: 200,
+  type: "good",
+  data: { name: "Thanni" },
+};
+```
+
+Also `Array<number>` is the same as `number[]`. The same applies to other types we've discussed earlier.
+
+### Pick and Omit
+
+They help select or deselect certain types in a Type without having to create a new Type.
+
+```typescript
+type ToDo = {
+  id: number;
+  task: string;
+  isCOmpleted: boolean;
+};
+
+type ToDoPreview = Omit<ToDo, "isCompleted">;
+type ToDoActive = Pick<ToDo, "id" | "task">;
+```
+
+### Partial and Required
+
+```typescript
+type ToDo = {
+  id: number;
+  task: string;
+  isCompleted: boolean;
+};
+
+type PartialToDo = Partial<ToDo>; *// all properties are optional*
+type RequiredToDo = Required<ToDo>; *// all properties are required*
+```
+
+### ReturnType and Parameters
+
+```typescript
+function add(a: number, b: number) {
+  return a + b;
+}
+
+type Add = ReturnType<typeof add>;
+type Params = Parameters<typeof add>;
+```
+
+### Record Type
+
+```typescript
+type User = {
+  name: string;
+  age: number;
+  occupation: string;
+};
+
+type UserRecord = Record<keyof User, string>;
+```
+
+### Awaited
+
+```typescript
+async function getPromise() {
+  return "Hello World";
+}
+
+type Value = Awaited<ReturnType<typeof getPromise>>;
+```
+
+### Basic Type Guard
+
+```typescript
+type User = {
+  name: string;
+  age: number;
+  gender: "male" | "female" | "other";
+  dueDate: Date | string;
+};
+
+function getUser(user: User) {
+  if (user.dueDate instanceof Date) {
+    return user.dueDate.toISOString();
+  }
+
+  console.log(user.dueDate);
+}
+```
+
+### Never Type
+
+The code below checks if there's any other type of priority that is left unattended to.
+
+```typescript
+type ToDo = {
+  title: string;
+  description: string;
+  priority: "high" | "medium" | "low";
+  isComplete: boolean;
+};
+
+function extendToDo(todo: ToDo) {
+  switch (todo.priority) {
+    case "high":
+      return todo;
+    case "medium":
+      return todo;
+    case "low":
+      return todo;
+    default:
+      const exCheck: never = todo.priority;
+      return exCheck;
+  }
+}
+```
+
+### Unknown Type
+
+```typescript
+function func(data: unknown) {
+  if (typeof data === "string") {
+    console.log("string");
+    return;
+  }
+}
+```
