@@ -20,4 +20,6 @@ _This note is taken from the [The Way To Go](https://www.educative.io/courses/th
 
 [Lesson 1: Learning Go: Basic Constructs & Data Types](https://notes.thanni.co/learning-go-basic-constructs-data-types/)
 
+[Lesson 2: Learning Go: Control Structures](https://notes.thanni.co/learning-go-control-structures/)
+
 <mark>Learning in progress</mark>
