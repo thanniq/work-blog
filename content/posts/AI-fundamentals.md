@@ -18,6 +18,6 @@ Discover AI's core principles, from machine learning to neural networks. This gu
 
 NB: These notes are taken from the [AI fundamentals course](https://www.datacamp.com/tracks/ai-fundamentals) on Datacamp
 
-[Lesson 1: Understanding artificial intelligence?](https://notes.thanni.co/understaning-artificial-intelligence/)
+[Lesson 1: Understanding artificial intelligence?](https://notes.thanni.co/understanding-artificial-intelligence/)
 
 <mark>Learning in progress</mark>
