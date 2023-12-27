@@ -10,7 +10,7 @@ hasCJKLanguage: true
 permalinks:
   posts: /:title/
 
-paginate: 5
+paginate: 10
 
 # googleAnalytics: UA-153549602-1
 # disqusShortname: your-disqus-shortname
@@ -70,9 +70,9 @@ params:
   # To enable math typesetting , you could set `math: true`, default is `false`
   math: false
   # To hidden post summary in home page, you could set `hiddenPostSummaryInHomePage: true`, default is `false`
-  hiddenPostSummaryInHomePage: false
+  hiddenPostSummaryInHomePage: true
   # Website copy write, default: '© Copyright 2021 {params.author}'
-  copyright: © Copyright 2023 Thanni
+  copyright: © Copyright 2024 Thanni
 
   # Extra links in navigation
   links:
