@@ -1,6 +1,6 @@
 +++
 author = "Thanni"
-title = "Shopify Liquid ⭐️"
+title = "Shopify Liquid"
 date = "2023-11-23"
 description = "A beginner's guide to Shopify liquid"
 tags = [

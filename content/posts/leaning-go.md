@@ -22,4 +22,6 @@ _This note is taken from the [The Way To Go](https://www.educative.io/courses/th
 
 [Lesson 2: Learning Go: Control Structures](https://notes.thanni.co/learning-go-control-structures/)
 
+[Lesson 2: Learning Go: Functions](https://notes.thanni.co/learning-go-functions/)
+
 <mark>Learning in progress</mark>
