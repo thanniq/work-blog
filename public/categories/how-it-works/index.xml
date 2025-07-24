@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>How It Works on Thanni - SWE</title>
+    <link>https://notes.bythanni.com/categories/how-it-works/</link>
+    <description>Recent content in How It Works on Thanni - SWE</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://notes.bythanni.com/categories/how-it-works/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Understanding Artificial Intelligence</title>
+      <link>https://notes.bythanni.com/understanding-artificial-intelligence/</link>
+      <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/understanding-artificial-intelligence/</guid>
+      <description>&lt;p&gt;From self-driving cars to medical diagnosis, AI&amp;rsquo;s impact is permeating our lives, shaping the future of technology and society.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Networking Fundamentals: Network Devices</title>
+      <link>https://notes.bythanni.com/networking-fundamentals-network-devices/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/networking-fundamentals-network-devices/</guid>
+      <description>&lt;p&gt;Explore the fundamentals of networking, from IP addresses to the roles of routers and switches. This extensive guide is perfect for gaining a quick grasp on essential networking concepts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Artificial Intelligence Fundamentals</title>
+      <link>https://notes.bythanni.com/artificial-intelligence-fundamentals/</link>
+      <pubDate>Sat, 18 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/artificial-intelligence-fundamentals/</guid>
+      <description>&lt;p&gt;Discover AI&amp;rsquo;s core principles, from machine learning to neural networks. This guide offers essential insights, making it perfect for quick understanding of fundamental artificial intelligence concepts.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

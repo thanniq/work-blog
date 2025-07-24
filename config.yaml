@@ -10,9 +10,10 @@ hasCJKLanguage: true
 permalinks:
   posts: /:title/
 
-paginate: 10
+pagination:
+  pagerSize: 10
 
-# googleAnalytics: UA-153549602-1
+googleAnalytics: UA-153549602-1
 # disqusShortname: your-disqus-shortname
 
 # Hugo Configure Markup
@@ -29,18 +30,6 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-
-# Social links in footer, support github,twitter,stackoverflow,facebook
-social:
-  # e.g.
-  github: https://github.com/
-  # spotify: https://spotify.com/
-  # youtube: https://youtube.com/
-  # twitter: https://twitter.com/
-  # instagram: https://instagram.com/
-  # dribbble: https://dribbble.com/thanni
-  #stackoverflow: your-github-link
-  # facebook: your-facebook-link
 
 # Site parameters
 params:
@@ -90,3 +79,15 @@ params:
     ## e.g.
     # - js/custom.js # local js in `static/js/custom.js`
     # - https://example.com/custom.js # remote js
+
+  # Social links in footer, support github,twitter,stackoverflow,facebook
+  Social:
+    # e.g.
+    github: https://github.com/
+    # spotify: https://spotify.com/
+    # youtube: https://youtube.com/
+    # twitter: https://twitter.com/
+    # instagram: https://instagram.com/
+    # dribbble: https://dribbble.com/thanni
+    #stackoverflow: your-github-link
+    # facebook: your-facebook-link

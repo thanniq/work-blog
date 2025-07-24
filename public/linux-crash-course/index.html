@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Linux Crash Course | Thanni - SWE</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="Learning Linux">
+<meta name="generator" content="Hugo 0.148.1">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+ 
+    
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	
+	<a href ="https://thanni.co">Portfolio</a>
+	<a href="/posts">Archive</a>
+	
+	<a href ="mailto:hello@thanni.work" class="button">Hire Me</a>
+	
+
+	
+
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">Linux Crash Course</h1>
+
+    <div class="tip">
+        <time datetime="2023-12-28 00:00:00 &#43;0000 UTC">Dec 28, 2023</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          3 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#command-basics">Command Basics</a></li>
+    <li><a href="#getting-help">Getting Help</a></li>
+    <li><a href="#the-type--which-commands">The Type &amp; Which Commands</a></li>
+    <li><a href="#navigation">Navigation</a>
+      <ul>
+        <li><a href="#root">Root</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#pwd-print-working-directory"><code>pwd</code> (print working directory)</a></li>
+        <li><a href="#ls"><code>ls</code></a></li>
+        <li><a href="#cd"><code>cd</code></a></li>
+        <li><a href="#going-back">Going back</a></li>
+        <li><a href="#relative-and-absolute-paths">Relative and Absolute Paths</a></li>
+      </ul>
+    </li>
+    <li><a href="#creating-files--folders">Creating Files &amp; Folders</a></li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>Learn the fundamentals of Linux, exploring its features, and practical applications.</p>
+<p>Kernel: A compute program that forms the core of an operating system and manages critical tasks like:</p>
+<ul>
+<li>Memory management - task scheduling</li>
+<li>Managing hardware</li>
+</ul>
+<p>Zsh 🔁 Bash</p>
+<p><code>~ &gt; cash -s /bin/{bash orzsh}</code></p>
+<h2 id="command-basics">Command Basics <a href="#command-basics" class="anchor">🔗</a></h2><p><code>ncal</code> to check the calendar</p>
+<p><code>sort filename.txt</code> to sort info inside a text file</p>
+<p><code>rm filename.ext</code> to remove the file</p>
+<p>Long Form Options</p>
+<p><code>-r</code> - for options <code>--</code> universal for long names</p>
+<h2 id="getting-help">Getting Help <a href="#getting-help" class="anchor">🔗</a></h2><p><code>man &quot;command&quot;</code> to get help, q to quit</p>
+<p>Synopsis - <code>[]</code> - means optional</p>
+<p><code>[-tkbs]</code> means -t, -k, -b, and they are optional</p>
+<p><code>FILENAME</code>&hellip; means can accept multiple filenames, but it&rsquo;s not optional</p>
+<p><code>[FILENAME]</code>&hellip; - means can accept multiple filenames but optional</p>
+<h2 id="the-type--which-commands">The Type &amp; Which Commands <a href="#the-type--which-commands" class="anchor">🔗</a></h2><p><code>type &quot;echo&quot;</code> - to know which class a command is.</p>
+<h2 id="navigation">Navigation <a href="#navigation" class="anchor">🔗</a></h2><h3 id="root">Root <a href="#root" class="anchor">🔗</a></h3><p><code>/</code> - The root directory</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript3" data-lang="gdscript3"><span style="display:flex;"><span><span style="color:#666">/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#666">/</span> drills into
+</span></span><span style="display:flex;"><span>bin <span style="color:#666">-</span> home <span style="color:#666">-</span> root <span style="color:#666">-</span> dev <span style="color:#666">-</span> <span style="color:#a2f;font-weight:bold">var</span> <span style="color:#a2f;font-weight:bold">and</span> others
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#666">/</span>home drill into users
+</span></span><span style="display:flex;"><span>thanni
+</span></span></code></pre></div><p>On Linux, <code>xdg-open /</code> to access the top directory</p>
+<p>On a Mac, you can use <code>open /</code> to access the top directory.</p>
+<h3 id="home">Home <a href="#home" class="anchor">🔗</a></h3><p>The second important directory is called <code>/home</code>, which contains a folder for each user.</p>
+<p><code>/</code> - refers to root</p>
+<p><code>~</code> - refers to the home</p>
+<h3 id="pwd-print-working-directory"><code>pwd</code> (print working directory) <a href="#pwd-print-working-directory" class="anchor">🔗</a></h3><p>The print working directory command is super simple but very useful. Think of it as a &ldquo;where am I&rdquo; command. It will print the path of your current working directory, starting from the root / For example, if I were on my desktop and I ran pwd, I would see /home/colt/Desktop</p>
+<h3 id="ls"><code>ls</code> <a href="#ls" class="anchor">🔗</a></h3><p>List the content of a directory</p>
+<p><strong>ls options</strong></p>
+<p>The ls command accepts a ton of options. Two of the more commonly used are -l and -a</p>
+<p><code>ls -l</code> - (lowercase L) prints in long listing format. It shows far more information about each file/folder</p>
+<p><code>ls -a</code> - the -a option will also list any hidden files that begin with <code>.</code> . These are normally not listed</p>
+<p><code>ls -la</code> - We can combine options! This example prints detailed information for all files, including hidden files.</p>
+<h3 id="cd"><code>cd</code> <a href="#cd" class="anchor">🔗</a></h3><p>The cd command changes the current working directory, &ldquo;moving&rdquo; into another directory. For example&hellip; cd chickens would change into the chickens directory (assuming it exists) cd /home/colt would take me my home directory</p>
+<h3 id="going-back">Going back <a href="#going-back" class="anchor">🔗</a></h3><p>In Unix-like operating systems, a single dot (.) is used to represent the current directory. Two dots (..) represent the parent directory. So we can use cd .. to move up one level, from our current directory into the parent directory. <code>cd ~</code> to go straight back to home.</p>
+<h3 id="relative-and-absolute-paths">Relative and Absolute Paths <a href="#relative-and-absolute-paths" class="anchor">🔗</a></h3><p>Relative paths are paths that specify a directory/file relative to the current directory. e.g /home/colt</p>
+<p>We can use absolute paths to specify a location no matter our current location. But they start from the root directory - <code>/</code>.</p>
+<h2 id="creating-files--folders">Creating Files &amp; Folders <a href="#creating-files--folders" class="anchor">🔗</a></h2><p><mark>Learning in progress</mark></p>
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://notes.bythanni.com/tags/linux">linux</a>
+            
+        </div>
+    
+    
+    
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://github.com/" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#A9B5C2"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+        © Copyright 2024 Thanni
+    
+    </div>
+
+    
+</footer>
+
+
+
+  </body>
+</html>

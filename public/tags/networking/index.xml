@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Networking on Thanni - SWE</title>
+    <link>https://notes.bythanni.com/tags/networking/</link>
+    <description>Recent content in Networking on Thanni - SWE</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://notes.bythanni.com/tags/networking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Networking Fundamentals: Network Devices</title>
+      <link>https://notes.bythanni.com/networking-fundamentals-network-devices/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/networking-fundamentals-network-devices/</guid>
+      <description>&lt;p&gt;Explore the fundamentals of networking, from IP addresses to the roles of routers and switches. This extensive guide is perfect for gaining a quick grasp on essential networking concepts.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

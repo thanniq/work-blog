@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thanni - SWE</title>
+    <link>https://notes.bythanni.com/</link>
+    <description>Recent content on Thanni - SWE</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://notes.bythanni.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning Go: Functions</title>
+      <link>https://notes.bythanni.com/learning-go-functions/</link>
+      <pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-go-functions/</guid>
+      <description>&lt;p&gt;Go Control Structures empower precise flow: loops for iteration, conditionals for decisions. Simplifying logic with elegance and efficiency&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Linux Crash Course</title>
+      <link>https://notes.bythanni.com/linux-crash-course/</link>
+      <pubDate>Thu, 28 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/linux-crash-course/</guid>
+      <description>&lt;p&gt;Learn the fundamentals of Linux, exploring its features, and practical applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>React Hooks</title>
+      <link>https://notes.bythanni.com/react-hooks/</link>
+      <pubDate>Thu, 28 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/react-hooks/</guid>
+      <description>&lt;p&gt;Learn the fundamentals of React, exploring its syntax, features, and practical applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Understanding Artificial Intelligence</title>
+      <link>https://notes.bythanni.com/understanding-artificial-intelligence/</link>
+      <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/understanding-artificial-intelligence/</guid>
+      <description>&lt;p&gt;From self-driving cars to medical diagnosis, AI&amp;rsquo;s impact is permeating our lives, shaping the future of technology and society.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Learning Go: Control Structures</title>
+      <link>https://notes.bythanni.com/learning-go-control-structures/</link>
+      <pubDate>Tue, 19 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-go-control-structures/</guid>
+      <description>&lt;p&gt;Go Control Structures empower precise flow: loops for iteration, conditionals for decisions. Simplifying logic with elegance and efficiency&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Learning Go: Basic Constructs &amp; Data Types</title>
+      <link>https://notes.bythanni.com/learning-go-basic-constructs-data-types/</link>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-go-basic-constructs-data-types/</guid>
+      <description>&lt;p&gt;Explore Go&amp;rsquo;s foundational elements with Basic Constructs &amp;amp; Data Types, mastering the essentials for efficient and robust programming&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Learning Go</title>
+      <link>https://notes.bythanni.com/learning-go/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-go/</guid>
+      <description>&lt;p&gt;Learn the fundamentals of Go programming, exploring its syntax, features, and practical applications.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Typescript Crash Course</title>
+      <link>https://notes.bythanni.com/typescript-crash-course/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/typescript-crash-course/</guid>
+      <description>&lt;p&gt;TypeScript, a superset of JavaScript, enhances code quality with static typing. It brings robustness to web development, empowering developers with modern features.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Learning Ruby: Classes &amp; Objects</title>
+      <link>https://notes.bythanni.com/learning-ruby-classes-objects/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-ruby-classes-objects/</guid>
+      <description>&lt;p&gt;Classes in ruby are first-class objects. Each is an instance of class &lt;code&gt;Class&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;A class can be defined simply as:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#00f&#34;&gt;House&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Learning Ruby: Loops &amp; Blocks</title>
+      <link>https://notes.bythanni.com/learning-ruby-loops-blocks/</link>
+      <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-ruby-loops-blocks/</guid>
+      <description>&lt;p&gt;A loop is a control structure that allows you to repeatedly execute a block of code.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f&#34;&gt;loop&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;do&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#a2f&#34;&gt;puts&lt;/span&gt; &lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;I&amp;#39;m looping...&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Shopify Liquid</title>
+      <link>https://notes.bythanni.com/shopify-liquid/</link>
+      <pubDate>Thu, 23 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/shopify-liquid/</guid>
+      <description>&lt;p&gt;Unlock the full potential of a Shopify store with Liquid development. This tutorial series is liquid at a glance, and not a replacement for the official documentation.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Learning Ruby: Methods &amp; Functions</title>
+      <link>https://notes.bythanni.com/learning-ruby-methods-functions/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-ruby-methods-functions/</guid>
+      <description>&lt;p&gt;Methods are a way to encapsulate and provide names for ruby expressions. It helps avoid code duplication, so we can keep calling the same methods when we need them.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Networking Fundamentals: Network Devices</title>
+      <link>https://notes.bythanni.com/networking-fundamentals-network-devices/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/networking-fundamentals-network-devices/</guid>
+      <description>&lt;p&gt;Explore the fundamentals of networking, from IP addresses to the roles of routers and switches. This extensive guide is perfect for gaining a quick grasp on essential networking concepts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Artificial Intelligence Fundamentals</title>
+      <link>https://notes.bythanni.com/artificial-intelligence-fundamentals/</link>
+      <pubDate>Sat, 18 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/artificial-intelligence-fundamentals/</guid>
+      <description>&lt;p&gt;Discover AI&amp;rsquo;s core principles, from machine learning to neural networks. This guide offers essential insights, making it perfect for quick understanding of fundamental artificial intelligence concepts.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Learning Ruby</title>
+      <link>https://notes.bythanni.com/learning-ruby/</link>
+      <pubDate>Sat, 18 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-ruby/</guid>
+      <description>&lt;p&gt;Learn the fundamentals of Ruby programming, exploring its syntax, features, and practical applications.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

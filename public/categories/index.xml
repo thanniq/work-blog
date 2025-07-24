@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Thanni - SWE</title>
+    <link>https://notes.bythanni.com/categories/</link>
+    <description>Recent content in Categories on Thanni - SWE</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://notes.bythanni.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tutorial</title>
+      <link>https://notes.bythanni.com/categories/tutorial/</link>
+      <pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/categories/tutorial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>How It Works</title>
+      <link>https://notes.bythanni.com/categories/how-it-works/</link>
+      <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/categories/how-it-works/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ECommerce</title>
+      <link>https://notes.bythanni.com/categories/ecommerce/</link>
+      <pubDate>Thu, 23 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/categories/ecommerce/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

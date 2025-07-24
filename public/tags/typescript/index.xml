@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Typescript on Thanni - SWE</title>
+    <link>https://notes.bythanni.com/tags/typescript/</link>
+    <description>Recent content in Typescript on Thanni - SWE</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://notes.bythanni.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Typescript Crash Course</title>
+      <link>https://notes.bythanni.com/typescript-crash-course/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/typescript-crash-course/</guid>
+      <description>&lt;p&gt;TypeScript, a superset of JavaScript, enhances code quality with static typing. It brings robustness to web development, empowering developers with modern features.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

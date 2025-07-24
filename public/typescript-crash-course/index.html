@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Typescript Crash Course | Thanni - SWE</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="Typescript">
+<meta name="generator" content="Hugo 0.148.1">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+ 
+    
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	
+	<a href ="https://thanni.co">Portfolio</a>
+	<a href="/posts">Archive</a>
+	
+	<a href ="mailto:hello@thanni.work" class="button">Hire Me</a>
+	
+
+	
+
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">Typescript Crash Course</h1>
+
+    <div class="tip">
+        <time datetime="2023-12-01 00:00:00 &#43;0000 UTC">Dec 1, 2023</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          6 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#starting-a-typescript-project-with-the-cli">Starting a typescript project with the CLI</a></li>
+    <li><a href="#starting-a-typescript-project-with-a-bundle---vite">Starting a typescript project with a bundle - VITE</a></li>
+    <li><a href="#assignment-types">Assignment Types</a></li>
+    <li><a href="#objects">Objects</a>
+      <ul>
+        <li><a href="#type">Type</a></li>
+        <li><a href="#interface">Interface</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions">Functions</a>
+      <ul>
+        <li><a href="#void-type">Void Type</a></li>
+        <li><a href="#optional-parameters">Optional Parameters</a></li>
+        <li><a href="#destructured-parameters">Destructured Parameters</a></li>
+        <li><a href="#rest-parameters">Rest Parameters</a></li>
+        <li><a href="#functions-as-variables">Functions as Variables</a></li>
+      </ul>
+    </li>
+    <li><a href="#more-types">More Types</a>
+      <ul>
+        <li><a href="#union-type">Union Type</a></li>
+        <li><a href="#intersection-type">Intersection Type</a></li>
+        <li><a href="#read-only">Read Only</a></li>
+        <li><a href="#keyof">KeyOf</a></li>
+        <li><a href="#typeof">TypeOf</a></li>
+        <li><a href="#index-type">Index Type</a></li>
+        <li><a href="#const">Const</a></li>
+        <li><a href="#tuple">Tuple</a></li>
+        <li><a href="#generics">Generics</a></li>
+        <li><a href="#pick-and-omit">Pick and Omit</a></li>
+        <li><a href="#partial-and-required">Partial and Required</a></li>
+        <li><a href="#returntype-and-parameters">ReturnType and Parameters</a></li>
+        <li><a href="#record-type">Record Type</a></li>
+        <li><a href="#awaited">Awaited</a></li>
+        <li><a href="#basic-type-guard">Basic Type Guard</a></li>
+        <li><a href="#never-type">Never Type</a></li>
+        <li><a href="#unknown-type">Unknown Type</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>TypeScript, a superset of JavaScript, enhances code quality with static typing. It brings robustness to web development, empowering developers with modern features.</p>
+<h2 id="starting-a-typescript-project-with-the-cli">Starting a typescript project with the CLI <a href="#starting-a-typescript-project-with-the-cli" class="anchor">🔗</a></h2><p><code>npm init -y</code> to create the package.json file.</p>
+<p>Install the typescript compiler - <code>npm i --save-dev typescript</code> as a dev dependency</p>
+<p><code>npx tsc --init</code> to run the typescript compiler and create a config file</p>
+<h2 id="starting-a-typescript-project-with-a-bundle---vite">Starting a typescript project with a bundle - VITE <a href="#starting-a-typescript-project-with-a-bundle---vite" class="anchor">🔗</a></h2><p><code>npm create vite@latest .</code></p>
+<h2 id="assignment-types">Assignment Types <a href="#assignment-types" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">let</span> a: <span style="color:#0b0;font-weight:bold">number</span> <span style="color:#666">=</span> <span style="color:#666">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">let</span> b: <span style="color:#0b0;font-weight:bold">string</span> <span style="color:#666">=</span> <span style="color:#b44">&#34;asdf&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">let</span> a: <span style="color:#0b0;font-weight:bold">number</span>[] <span style="color:#666">=</span> []; <span style="color:#080;font-style:italic">// array type
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#a2f;font-weight:bold">let</span> a; <span style="color:#080;font-style:italic">// any type
+</span></span></span></code></pre></div><h2 id="objects">Objects <a href="#objects" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> user<span style="color:#666">:</span> { name: <span style="color:#0b0;font-weight:bold">string</span>; age: <span style="color:#0b0;font-weight:bold">number</span>; isProgrammer: <span style="color:#0b0;font-weight:bold">boolean</span> } <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  name<span style="color:#666">:</span> <span style="color:#b44">&#34;John&#34;</span>,
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">32</span>,
+</span></span><span style="display:flex;"><span>  isProgrammer: <span style="color:#0b0;font-weight:bold">true</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>We could also make one of the types optional using <code>?</code> after the variable identifier</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> user<span style="color:#666">:</span> { name: <span style="color:#0b0;font-weight:bold">string</span>; age: <span style="color:#0b0;font-weight:bold">number</span>; isProgrammer?: <span style="color:#0b0;font-weight:bold">boolean</span> } <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  name<span style="color:#666">:</span> <span style="color:#b44">&#34;John&#34;</span>,
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">32</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="type">Type <a href="#type" class="anchor">🔗</a></h3><p>A type is declared with capital case - <code>PersonName</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> Person <span style="color:#666">=</span> { name: <span style="color:#0b0;font-weight:bold">string</span>; age: <span style="color:#0b0;font-weight:bold">number</span>; isProgrammer?: <span style="color:#0b0;font-weight:bold">boolean</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> user: <span style="color:#0b0;font-weight:bold">Person</span> <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  name<span style="color:#666">:</span> <span style="color:#b44">&#34;John&#34;</span>,
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">32</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="interface">Interface <a href="#interface" class="anchor">🔗</a></h3><p>An interface is more or less like type, but it has a few differences</p>
+<ul>
+<li>It has no equal sign - <code>interface Person {....}</code></li>
+<li>It has to be an object</li>
+<li>It&rsquo;s not flexible like type where it can be assigned to other types e.g <code>type Person = number</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">interface</span> Person {
+</span></span><span style="display:flex;"><span>  name: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">number</span>;
+</span></span><span style="display:flex;"><span>  isProgrammer?: <span style="color:#0b0;font-weight:bold">boolean</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="functions">Functions <a href="#functions" class="anchor">🔗</a></h2><p>A function takes parameters with types and returns a type (implicitly) too.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> printPerson (name: <span style="color:#0b0;font-weight:bold">string</span>, age: <span style="color:#0b0;font-weight:bold">number</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> ()
+</span></span><span style="display:flex;"><span>} <span style="color:#080;font-style:italic">//This code returns any type, but the arguments when calling the funciton msut be a string and a number.
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> printPerson (person<span style="color:#666">:</span> {name: <span style="color:#0b0;font-weight:bold">string</span>}) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> (person.name)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="void-type">Void Type <a href="#void-type" class="anchor">🔗</a></h3><p>Unless explicitly stated that a function returns undefined, a function that doesn&rsquo;t return anything returns void by defauly.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> printPerson(name: <span style="color:#0b0;font-weight:bold">string</span>, age: <span style="color:#0b0;font-weight:bold">number</span>) {
+</span></span><span style="display:flex;"><span>  console.log(age);
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="optional-parameters">Optional Parameters <a href="#optional-parameters" class="anchor">🔗</a></h3><p>Uses the <code>?</code> to denote parameters that are optional when passing arguments.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> printPerson(name: <span style="color:#0b0;font-weight:bold">string</span>, age?: <span style="color:#0b0;font-weight:bold">number</span>) {
+</span></span><span style="display:flex;"><span>  console.log(age);
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="destructured-parameters">Destructured Parameters <a href="#destructured-parameters" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> options <span style="color:#666">=</span> { debugMode: <span style="color:#0b0;font-weight:bold">boolean</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> test(age: <span style="color:#0b0;font-weight:bold">number</span>, { debugMode <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">false</span> }<span style="color:#666">:</span> options) {
+</span></span><span style="display:flex;"><span>  console.log(age, debugMode);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>test(<span style="color:#666">18</span>, { debugMode: <span style="color:#0b0;font-weight:bold">true</span> });
+</span></span></code></pre></div><h3 id="rest-parameters">Rest Parameters <a href="#rest-parameters" class="anchor">🔗</a></h3><p>It&rsquo;s always important to use an array type when passing a rest parameter</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> test(...nums: <span style="color:#0b0;font-weight:bold">number</span>[]) {
+</span></span><span style="display:flex;"><span>  console.log(nums);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>test(<span style="color:#666">1</span>, <span style="color:#666">3</span>, <span style="color:#666">4</span>, <span style="color:#666">5</span>, <span style="color:#666">6</span>, <span style="color:#666">7</span>, <span style="color:#666">8</span>, <span style="color:#666">9</span>, <span style="color:#666">0</span>);
+</span></span></code></pre></div><h3 id="functions-as-variables">Functions as Variables <a href="#functions-as-variables" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> test(a: <span style="color:#0b0;font-weight:bold">number</span>, b: <span style="color:#0b0;font-weight:bold">number</span>, cb<span style="color:#666">:</span> (x: <span style="color:#0b0;font-weight:bold">number</span>, y: <span style="color:#0b0;font-weight:bold">number</span>) <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">void</span>) {
+</span></span><span style="display:flex;"><span>  cb(a, b);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>test(<span style="color:#666">3</span>, <span style="color:#666">8</span>, (x, y) <span style="color:#666">=&gt;</span> {
+</span></span><span style="display:flex;"><span>  console.log(x <span style="color:#666">*</span> y);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h2 id="more-types">More Types <a href="#more-types" class="anchor">🔗</a></h2><h3 id="union-type">Union Type <a href="#union-type" class="anchor">🔗</a></h3><p>We can have a union of types</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> name <span style="color:#666">=</span> <span style="color:#0b0;font-weight:bold">string</span> <span style="color:#666">|</span> <span style="color:#0b0;font-weight:bold">number</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> sayHello(name: <span style="color:#0b0;font-weight:bold">name</span>) {
+</span></span><span style="display:flex;"><span>  console.log(<span style="color:#b44">`Hello </span><span style="color:#b68;font-weight:bold">${</span>name<span style="color:#b68;font-weight:bold">}</span><span style="color:#b44">`</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sayHello(<span style="color:#b44">&#34;Thanni&#34;</span>);
+</span></span></code></pre></div><p>We can also have a union of defined values</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> name <span style="color:#666">=</span> <span style="color:#b44">&#34;user&#34;</span> <span style="color:#666">|</span> <span style="color:#b44">&#34;username&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> sayHello(name: <span style="color:#0b0;font-weight:bold">name</span>) {
+</span></span><span style="display:flex;"><span>  console.log(<span style="color:#b44">`Hello </span><span style="color:#b68;font-weight:bold">${</span>name<span style="color:#b68;font-weight:bold">}</span><span style="color:#b44">`</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sayHello(<span style="color:#b44">&#34;user&#34;</span>);
+</span></span></code></pre></div><p>We can also have a union of unions</p>
+<h3 id="intersection-type">Intersection Type <a href="#intersection-type" class="anchor">🔗</a></h3><p>An intersection is the opposite of union, using the <code>&amp;</code> sign</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> Person <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  user: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">number</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> PersonWithID <span style="color:#666">=</span> Person <span style="color:#666">&amp;</span> { id: <span style="color:#0b0;font-weight:bold">number</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> person: <span style="color:#0b0;font-weight:bold">PersonWithID</span> <span style="color:#666">=</span> { user<span style="color:#666">:</span> <span style="color:#b44">&#34;John&#34;</span>, age: <span style="color:#0b0;font-weight:bold">30</span>, id: <span style="color:#0b0;font-weight:bold">1</span> };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>console.log(person);
+</span></span></code></pre></div><h3 id="read-only">Read Only <a href="#read-only" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> NumberArray <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">readonly</span> <span style="color:#0b0;font-weight:bold">number</span>[];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> newNum: <span style="color:#0b0;font-weight:bold">NumberArray</span> <span style="color:#666">=</span> [<span style="color:#666">1</span>, <span style="color:#666">2</span>, <span style="color:#666">3</span>, <span style="color:#666">4</span>, <span style="color:#666">5</span>];
+</span></span></code></pre></div><h3 id="keyof">KeyOf <a href="#keyof" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> Person <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  user: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">number</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> person <span style="color:#666">=</span> setPerson(<span style="color:#b44">&#34;user&#34;</span>, { user<span style="color:#666">:</span> <span style="color:#b44">&#34;Thanni&#34;</span>, age: <span style="color:#0b0;font-weight:bold">25</span> });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> setPerson(key: <span style="color:#0b0;font-weight:bold">keyof</span> Person, Person: <span style="color:#0b0;font-weight:bold">Person</span>) {
+</span></span><span style="display:flex;"><span>  console.log(Person[key]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="typeof">TypeOf <a href="#typeof" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> user <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  user<span style="color:#666">:</span> <span style="color:#b44">&#34;Thanni&#34;</span>,
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">25</span>,
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> newUser: <span style="color:#0b0;font-weight:bold">typeof</span> user[] <span style="color:#666">=</span> [];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>newUser.push(user);
+</span></span><span style="display:flex;"><span>newUser.push({ user<span style="color:#666">:</span> <span style="color:#b44">&#34;John&#34;</span>, age: <span style="color:#0b0;font-weight:bold">30</span> });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>console.log(newUser);
+</span></span></code></pre></div><h3 id="index-type">Index Type <a href="#index-type" class="anchor">🔗</a></h3><p>Allows you to access the types of properties of other types you&rsquo;ve already created.</p>
+<p>We could assign types by accessing type values using their indexes</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> User <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  user<span style="color:#666">:</span> <span style="color:#b44">&#34;Thanni&#34;</span>;
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">25</span>;
+</span></span><span style="display:flex;"><span>  skillLevel<span style="color:#666">:</span> <span style="color:#b44">&#34;Beginner&#34;</span> <span style="color:#666">|</span> <span style="color:#b44">&#34;Intermediate&#34;</span> <span style="color:#666">|</span> <span style="color:#b44">&#34;Advanced&#34;</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> printSkillLevel(skillLevel: <span style="color:#0b0;font-weight:bold">User</span>[<span style="color:#b44">&#34;skillLevel&#34;</span>]) {
+</span></span><span style="display:flex;"><span>  console.log(skillLevel);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Accessing types as object types</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> User <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  user: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">25</span>;
+</span></span><span style="display:flex;"><span>  skillLevel<span style="color:#666">:</span> <span style="color:#b44">&#34;Beginner&#34;</span> <span style="color:#666">|</span> <span style="color:#b44">&#34;Intermediate&#34;</span> <span style="color:#666">|</span> <span style="color:#b44">&#34;Advanced&#34;</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> groupSkillLevel <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  [index: <span style="color:#0b0;font-weight:bold">string</span>]<span style="color:#666">:</span> User[];
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// or
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> User <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  user: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">25</span>;
+</span></span><span style="display:flex;"><span>  skillLevel<span style="color:#666">:</span> <span style="color:#b44">&#34;Beginner&#34;</span> <span style="color:#666">|</span> <span style="color:#b44">&#34;Intermediate&#34;</span> <span style="color:#666">|</span> <span style="color:#b44">&#34;Advanced&#34;</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> groupSkillLevel <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  [index <span style="color:#a2f;font-weight:bold">in</span> User[<span style="color:#b44">&#34;skillLevel&#34;</span>]]<span style="color:#666">:</span> User[];
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><h3 id="const">Const <a href="#const" class="anchor">🔗</a></h3><p>In Ts, <code>let a = 1</code> - the type inferred as a number. However, <code>const a = 1</code> - the type is not inferred at all. Behind the scenes, it is denoted as <code>const a = 1 as const</code>. The same thing applies to <code>let a = 1 as const</code></p>
+<h3 id="tuple">Tuple <a href="#tuple" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> Tuple <span style="color:#666">=</span> [<span style="color:#0b0;font-weight:bold">string</span>, <span style="color:#0b0;font-weight:bold">number</span>, <span style="color:#a2f;font-weight:bold">boolean</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> a: <span style="color:#0b0;font-weight:bold">Tuple</span> <span style="color:#666">=</span> [<span style="color:#b44">&#34;Thanni&#34;</span>, <span style="color:#666">25</span>, <span style="color:#a2f;font-weight:bold">true</span>];
+</span></span></code></pre></div><h3 id="generics">Generics <a href="#generics" class="anchor">🔗</a></h3><p>Generics helps us be more precise about the output type. It&rsquo;s encapsulated in angle brackets <code>&lt;type&gt;</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> APIResponse&lt;<span style="color:#008000;font-weight:bold">Tdata</span>&gt; <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  status: <span style="color:#0b0;font-weight:bold">number</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">type</span><span style="color:#666">:</span> <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  data: <span style="color:#0b0;font-weight:bold">Tdata</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> response1: <span style="color:#0b0;font-weight:bold">APIResponse</span><span style="color:#666">&lt;</span>{ name: <span style="color:#0b0;font-weight:bold">string</span> }<span style="color:#666">&gt;</span> <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  status: <span style="color:#0b0;font-weight:bold">200</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">type</span><span style="color:#666">:</span> <span style="color:#b44">&#34;good&#34;</span>,
+</span></span><span style="display:flex;"><span>  data<span style="color:#666">:</span> { name<span style="color:#666">:</span> <span style="color:#b44">&#34;Thanni&#34;</span> },
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> response2: <span style="color:#0b0;font-weight:bold">APIResponse</span>&lt;<span style="color:#008000;font-weight:bold">string</span><span style="">[]</span>&gt; <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  status: <span style="color:#0b0;font-weight:bold">200</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">type</span><span style="color:#666">:</span> <span style="color:#b44">&#34;good&#34;</span>,
+</span></span><span style="display:flex;"><span>  data<span style="color:#666">:</span> [<span style="color:#b44">&#34;Thanni&#34;</span>, <span style="color:#b44">&#34;Thanni&#34;</span>],
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>They can also have default values</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> APIResponse&lt;<span style="color:#008000;font-weight:bold">Tdata</span> <span style="">=</span> { <span style="color:#b44">name</span><span style="">:</span> <span style="color:#b44">string</span> }&gt; <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  status: <span style="color:#0b0;font-weight:bold">number</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">type</span><span style="color:#666">:</span> <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  data: <span style="color:#0b0;font-weight:bold">Tdata</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> response1: <span style="color:#0b0;font-weight:bold">APIResponse</span> <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  status: <span style="color:#0b0;font-weight:bold">200</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">type</span><span style="color:#666">:</span> <span style="color:#b44">&#34;good&#34;</span>,
+</span></span><span style="display:flex;"><span>  data<span style="color:#666">:</span> { name<span style="color:#666">:</span> <span style="color:#b44">&#34;Thanni&#34;</span> },
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>If we want the generics to be restricted to only one type, we use the <code>extend</code> keyword. In the example below, the generic must only be an object.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> APIResponse&lt;<span style="color:#008000;font-weight:bold">Tdata</span> <span style="color:#b44">extends</span> <span style="color:#b44">object</span>&gt; <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  status: <span style="color:#0b0;font-weight:bold">number</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">type</span><span style="color:#666">:</span> <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  data: <span style="color:#0b0;font-weight:bold">Tdata</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> response1: <span style="color:#0b0;font-weight:bold">APIResponse</span><span style="color:#666">&lt;</span>{ name: <span style="color:#0b0;font-weight:bold">string</span> }<span style="color:#666">&gt;</span> <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  status: <span style="color:#0b0;font-weight:bold">200</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">type</span><span style="color:#666">:</span> <span style="color:#b44">&#34;good&#34;</span>,
+</span></span><span style="display:flex;"><span>  data<span style="color:#666">:</span> { name<span style="color:#666">:</span> <span style="color:#b44">&#34;Thanni&#34;</span> },
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>Also <code>Array&lt;number&gt;</code> is the same as <code>number[]</code>. The same applies to other types we&rsquo;ve discussed earlier.</p>
+<h3 id="pick-and-omit">Pick and Omit <a href="#pick-and-omit" class="anchor">🔗</a></h3><p>They help select or deselect certain types in a Type without having to create a new Type.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> ToDo <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  id: <span style="color:#0b0;font-weight:bold">number</span>;
+</span></span><span style="display:flex;"><span>  task: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  isCOmpleted: <span style="color:#0b0;font-weight:bold">boolean</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> ToDoPreview <span style="color:#666">=</span> Omit&lt;<span style="color:#008000;font-weight:bold">ToDo</span>, <span style="color:#b44">&#34;isCompleted&#34;</span>&gt;;
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> ToDoActive <span style="color:#666">=</span> Pick&lt;<span style="color:#008000;font-weight:bold">ToDo</span>, <span style="color:#b44">&#34;id&#34;</span> <span style="">|</span> <span style="color:#b44">&#34;task&#34;</span>&gt;;
+</span></span></code></pre></div><h3 id="partial-and-required">Partial and Required <a href="#partial-and-required" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> ToDo <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  id: <span style="color:#0b0;font-weight:bold">number</span>;
+</span></span><span style="display:flex;"><span>  task: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  isCompleted: <span style="color:#0b0;font-weight:bold">boolean</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> PartialToDo <span style="color:#666">=</span> Partial&lt;<span style="color:#008000;font-weight:bold">ToDo</span>&gt;; <span style="color:#666">*</span><span style="color:#080;font-style:italic">// all properties are optional*
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#a2f;font-weight:bold">type</span> RequiredToDo <span style="color:#666">=</span> Required&lt;<span style="color:#008000;font-weight:bold">ToDo</span>&gt;; <span style="color:#666">*</span><span style="color:#080;font-style:italic">// all properties are required*
+</span></span></span></code></pre></div><h3 id="returntype-and-parameters">ReturnType and Parameters <a href="#returntype-and-parameters" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> add(a: <span style="color:#0b0;font-weight:bold">number</span>, b: <span style="color:#0b0;font-weight:bold">number</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> a <span style="color:#666">+</span> b;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> Add <span style="color:#666">=</span> ReturnType&lt;<span style="color:#008000;font-weight:bold">typeof</span> <span style="color:#b44">add</span>&gt;;
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> Params <span style="color:#666">=</span> Parameters&lt;<span style="color:#008000;font-weight:bold">typeof</span> <span style="color:#b44">add</span>&gt;;
+</span></span></code></pre></div><h3 id="record-type">Record Type <a href="#record-type" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> User <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  name: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">number</span>;
+</span></span><span style="display:flex;"><span>  occupation: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> UserRecord <span style="color:#666">=</span> Record&lt;<span style="color:#008000;font-weight:bold">keyof</span> <span style="color:#b44">User</span>, <span style="color:#b44">string</span>&gt;;
+</span></span></code></pre></div><h3 id="awaited">Awaited <a href="#awaited" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">async</span> <span style="color:#a2f;font-weight:bold">function</span> getPromise() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#b44">&#34;Hello World&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> Value <span style="color:#666">=</span> Awaited&lt;<span style="color:#008000;font-weight:bold">ReturnType</span>&lt;<span style="color:#008000;font-weight:bold">typeof</span> <span style="color:#b44">getPromise</span>&gt;&gt;;
+</span></span></code></pre></div><h3 id="basic-type-guard">Basic Type Guard <a href="#basic-type-guard" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> User <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  name: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  age: <span style="color:#0b0;font-weight:bold">number</span>;
+</span></span><span style="display:flex;"><span>  gender<span style="color:#666">:</span> <span style="color:#b44">&#34;male&#34;</span> <span style="color:#666">|</span> <span style="color:#b44">&#34;female&#34;</span> <span style="color:#666">|</span> <span style="color:#b44">&#34;other&#34;</span>;
+</span></span><span style="display:flex;"><span>  dueDate: <span style="color:#0b0;font-weight:bold">Date</span> <span style="color:#666">|</span> <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> getUser(user: <span style="color:#0b0;font-weight:bold">User</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">if</span> (user.dueDate <span style="color:#a2f;font-weight:bold">instanceof</span> <span style="color:#a2f">Date</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">return</span> user.dueDate.toISOString();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  console.log(user.dueDate);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="never-type">Never Type <a href="#never-type" class="anchor">🔗</a></h3><p>The code below checks if there&rsquo;s any other type of priority that is left unattended to.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> ToDo <span style="color:#666">=</span> {
+</span></span><span style="display:flex;"><span>  title: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  description: <span style="color:#0b0;font-weight:bold">string</span>;
+</span></span><span style="display:flex;"><span>  priority<span style="color:#666">:</span> <span style="color:#b44">&#34;high&#34;</span> <span style="color:#666">|</span> <span style="color:#b44">&#34;medium&#34;</span> <span style="color:#666">|</span> <span style="color:#b44">&#34;low&#34;</span>;
+</span></span><span style="display:flex;"><span>  isComplete: <span style="color:#0b0;font-weight:bold">boolean</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> extendToDo(todo: <span style="color:#0b0;font-weight:bold">ToDo</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">switch</span> (todo.priority) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">case</span> <span style="color:#b44">&#34;high&#34;</span><span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a2f;font-weight:bold">return</span> todo;
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">case</span> <span style="color:#b44">&#34;medium&#34;</span><span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a2f;font-weight:bold">return</span> todo;
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">case</span> <span style="color:#b44">&#34;low&#34;</span><span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a2f;font-weight:bold">return</span> todo;
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">default</span><span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a2f;font-weight:bold">const</span> exCheck: <span style="color:#0b0;font-weight:bold">never</span> <span style="color:#666">=</span> todo.priority;
+</span></span><span style="display:flex;"><span>      <span style="color:#a2f;font-weight:bold">return</span> exCheck;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="unknown-type">Unknown Type <a href="#unknown-type" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> func(data: <span style="color:#0b0;font-weight:bold">unknown</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#a2f;font-weight:bold">typeof</span> data <span style="color:#666">===</span> <span style="color:#b44">&#34;string&#34;</span>) {
+</span></span><span style="display:flex;"><span>    console.log(<span style="color:#b44">&#34;string&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">return</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://notes.bythanni.com/tags/typescript">typescript</a>
+            
+        </div>
+    
+    
+    
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://github.com/" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#A9B5C2"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+        © Copyright 2024 Thanni
+    
+    </div>
+
+    
+</footer>
+
+
+
+  </body>
+</html>

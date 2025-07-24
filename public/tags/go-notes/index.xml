@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go-Notes on Thanni - SWE</title>
+    <link>https://notes.bythanni.com/tags/go-notes/</link>
+    <description>Recent content in Go-Notes on Thanni - SWE</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://notes.bythanni.com/tags/go-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning Go: Functions</title>
+      <link>https://notes.bythanni.com/learning-go-functions/</link>
+      <pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-go-functions/</guid>
+      <description>&lt;p&gt;Go Control Structures empower precise flow: loops for iteration, conditionals for decisions. Simplifying logic with elegance and efficiency&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Learning Go: Control Structures</title>
+      <link>https://notes.bythanni.com/learning-go-control-structures/</link>
+      <pubDate>Tue, 19 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-go-control-structures/</guid>
+      <description>&lt;p&gt;Go Control Structures empower precise flow: loops for iteration, conditionals for decisions. Simplifying logic with elegance and efficiency&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Learning Go: Basic Constructs &amp; Data Types</title>
+      <link>https://notes.bythanni.com/learning-go-basic-constructs-data-types/</link>
+      <pubDate>Sat, 09 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-go-basic-constructs-data-types/</guid>
+      <description>&lt;p&gt;Explore Go&amp;rsquo;s foundational elements with Basic Constructs &amp;amp; Data Types, mastering the essentials for efficient and robust programming&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

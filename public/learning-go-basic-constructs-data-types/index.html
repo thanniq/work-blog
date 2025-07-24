@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Learning Go: Basic Constructs &amp; Data Types | Thanni - SWE</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="Learning Go">
+<meta name="generator" content="Hugo 0.148.1">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+ 
+    
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	
+	<a href ="https://thanni.co">Portfolio</a>
+	<a href="/posts">Archive</a>
+	
+	<a href ="mailto:hello@thanni.work" class="button">Hire Me</a>
+	
+
+	
+
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">Learning Go: Basic Constructs &amp; Data Types</h1>
+
+    <div class="tip">
+        <time datetime="2023-12-09 00:00:00 &#43;0000 UTC">Dec 9, 2023</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          9 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#basics">Basics</a></li>
+    <li><a href="#import-functionality">Import Functionality</a>
+      <ul>
+        <li><a href="#packages">Packages</a></li>
+      </ul>
+    </li>
+    <li><a href="#functions">Functions</a></li>
+    <li><a href="#data-types">Data Types</a></li>
+    <li><a href="#constants">Constants</a>
+      <ul>
+        <li><a href="#enumerations">Enumerations</a></li>
+      </ul>
+    </li>
+    <li><a href="#variable">Variable</a></li>
+    <li><a href="#scope-of-variables">Scope of Variables</a>
+      <ul>
+        <li><a href="#printing">Printing</a></li>
+      </ul>
+    </li>
+    <li><a href="#elementary-types">Elementary Types</a></li>
+    <li><a href="#operators">Operators</a>
+      <ul>
+        <li><a href="#arithmetic-operators">Arithmetic Operators</a></li>
+        <li><a href="#logical-operators">Logical Operators</a></li>
+        <li><a href="#bitwise-operators">Bitwise operators</a></li>
+      </ul>
+    </li>
+    <li><a href="#strings">Strings</a>
+      <ul>
+        <li><a href="#concatenation-of-strings">Concatenation of strings</a></li>
+        <li><a href="#conversion-to-and-from-a-string">Conversion to and from a string</a></li>
+      </ul>
+    </li>
+    <li><a href="#time-and-dates">Time and Dates</a></li>
+    <li><a href="#pointers">Pointers</a></li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>Explore Go&rsquo;s foundational elements with Basic Constructs &amp; Data Types, mastering the essentials for efficient and robust programming</p>
+<h2 id="basics">Basics <a href="#basics" class="anchor">🔗</a></h2><p>Go files are name <code>filename.go</code> or <code>filename_type.go</code></p>
+<p>Some keywords are reserved in Go</p>
+<p><p class="markdown-image">
+  <img src="https://files.codingninjas.in/article_images/identifiers-keywords-0-1647278008.webp" alt="img"  />
+</p></p>
+<p>Go has a set of 36 predeclared identifiers</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>append</td>
+          <td>float64</td>
+          <td>println</td>
+      </tr>
+      <tr>
+          <td>bool</td>
+          <td>imag</td>
+          <td>real</td>
+      </tr>
+      <tr>
+          <td>byte</td>
+          <td>int</td>
+          <td>recover</td>
+      </tr>
+      <tr>
+          <td>cap</td>
+          <td>int8</td>
+          <td>int</td>
+      </tr>
+      <tr>
+          <td>close</td>
+          <td>int16</td>
+          <td>int8</td>
+      </tr>
+      <tr>
+          <td>complex64</td>
+          <td>int32</td>
+          <td>int16</td>
+      </tr>
+      <tr>
+          <td>complex128</td>
+          <td>int64</td>
+          <td>int32</td>
+      </tr>
+      <tr>
+          <td>copy</td>
+          <td>make</td>
+          <td>int64</td>
+      </tr>
+      <tr>
+          <td>delete</td>
+          <td>new</td>
+          <td>uint</td>
+      </tr>
+      <tr>
+          <td>error</td>
+          <td>nil</td>
+          <td>uint8</td>
+      </tr>
+      <tr>
+          <td>false</td>
+          <td>panic</td>
+          <td>uint16</td>
+      </tr>
+      <tr>
+          <td>float32</td>
+          <td>print</td>
+          <td>uint32</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>uint64</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Blank Identifier</strong> - Go also has a blank identifier <code>_</code> used to declare any variable of any type but it is discarded immediately after use.</p>
+<p><strong>Anonymous</strong> - Some functions can even have no names.</p>
+<h2 id="import-functionality">Import Functionality <a href="#import-functionality" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// or</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;fmt&#34;</span>; <span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">//or</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#b44">&#34;os&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// A package can also be given an Alias</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> fm <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span></code></pre></div><h3 id="packages">Packages <a href="#packages" class="anchor">🔗</a></h3><p>Every Go file belongs to only one package whereas one package can comprise many different Go files.</p>
+<h2 id="functions">Functions <a href="#functions" class="anchor">🔗</a></h2><p>Simple function -</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">functionName</span>()
+</span></span></code></pre></div><p>A few rules:</p>
+<ul>
+<li>The main function starts first</li>
+<li>Func main has no arguments or return values</li>
+<li>After every parameter, there must be a type</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">func_Name</span>(param1 type1, param2 type2, <span style="color:#666">...</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// Params can also share the same type</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">func_Name</span>(param1, param2 type1){
+</span></span><span style="display:flex;"><span>  <span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>If it&rsquo;s returning a type - <code>() type1 { .... }</code> or <code>() ret1 type1 { .... }</code></p>
+<p>If it&rsquo;s returning multiple types - <code>() (ret1 type 1, ret2 type2) {....}</code></p>
+<p>Small functions can be written in one line like - <code>func Sum(a, b int) int { return a + b }</code></p>
+<h2 id="data-types">Data Types <a href="#data-types" class="anchor">🔗</a></h2><p>Go is a statically typed language. Means the compiler can infer the type of the variable whether it&rsquo;s indicated or not.</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Types</strong></th>
+          <th><strong>Examples</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>elementary (or primitive)</td>
+          <td><code>int</code>, <code>float</code>, <code>bool</code>, <code>string</code></td>
+      </tr>
+      <tr>
+          <td>structured (or composite)</td>
+          <td><code>struct</code>, <code>array</code>, <code>slice</code>, <code>map</code>, <code>channel</code></td>
+      </tr>
+      <tr>
+          <td>interfaces</td>
+          <td>They describe the behavior of a type.</td>
+      </tr>
+  </tbody>
+</table>
+<p>A variable is declared as <code>var var_name var_type</code></p>
+<p>A function type is the return type</p>
+<p>We can also have user-defined type with aliases</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> alias_name <span style="color:#0b0;font-weight:bold">int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">var</span> a alias_name = <span style="color:#666">5</span>
+</span></span></code></pre></div><p>If you have more than one type and you&rsquo;d like to have aliases</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> (
+</span></span><span style="display:flex;"><span>  IZ <span style="color:#0b0;font-weight:bold">int</span>
+</span></span><span style="display:flex;"><span>  FZ <span style="color:#0b0;font-weight:bold">float32</span>
+</span></span><span style="display:flex;"><span>  STR <span style="color:#0b0;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Go doesn&rsquo;t automatically convert types unless done manually</p>
+<p>To convert a type, do - <code>valueOfTypeB = typeB(valueOfTypeA)</code> || <code>3 = int(3.2)</code>. This is called <em>type casting</em></p>
+<h2 id="constants">Constants <a href="#constants" class="anchor">🔗</a></h2><p>A value that <em>cannot</em> be changed by the program is called a <strong>constant</strong>. In Go, a constant can be defined using the keyword <strong>const</strong> as <code>const identifier [type] = value</code></p>
+<p>By convention, constants are written in uppercase - <code>const INCH = 2.54</code></p>
+<p>Also, a constant’s value should be known at compile time according to design principles.</p>
+<p>Multiple assignments (untyped) - <code>const BEEF, TWO, C = &quot;meat&quot;, 2, &quot;veg&quot;</code></p>
+<p>Multiple assignments (typed) - <code>const MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY int = 1, 2, 3, 4, 5, 6</code></p>
+<h3 id="enumerations">Enumerations <a href="#enumerations" class="anchor">🔗</a></h3><p>Constant be used to create aliases that hold a value.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>  UNKNOWN = <span style="color:#666">0</span>
+</span></span><span style="display:flex;"><span>  FEMALE = <span style="color:#666">1</span>
+</span></span><span style="display:flex;"><span>  MALE = <span style="color:#666">2</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>We can also enumerate with - <code>iota</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>  UNKNOWN = <span style="color:#a2f;font-weight:bold">iota</span>
+</span></span><span style="display:flex;"><span>  FEMALE = <span style="color:#a2f;font-weight:bold">iota</span>
+</span></span><span style="display:flex;"><span>  MALE = <span style="color:#a2f;font-weight:bold">iota</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// same as</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>  UNKNOWN = <span style="color:#a2f;font-weight:bold">iota</span>
+</span></span><span style="display:flex;"><span>  FEMALE
+</span></span><span style="display:flex;"><span>  MALE
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>The first use of iota is 0, then 1, then 0 &hellip;..</p>
+<p>You can also give enumeration a type name</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> Gender <span style="color:#0b0;font-weight:bold">int</span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> (
+</span></span><span style="display:flex;"><span>  UNKNOWN Gender = <span style="color:#a2f;font-weight:bold">iota</span>
+</span></span><span style="display:flex;"><span>  FEMALE
+</span></span><span style="display:flex;"><span>  MALE
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="variable">Variable <a href="#variable" class="anchor">🔗</a></h2><p>The naming of variables follows the <code>camelCasing</code> rules. If it has to be exported, it has to start with a capital letter.</p>
+<p>Declaration - <code>var number int = 5</code> or <code>var number = 5</code></p>
+<p>When we omit the type, using the keyword var is extra. We can write the same line of code using the <code>:=</code> assignment operator. So, <code>number := 5</code>. <em>The only exception to this is that it can only be used inside functions and not the package.</em></p>
+<h2 id="scope-of-variables">Scope of Variables <a href="#scope-of-variables" class="anchor">🔗</a></h2><p>Global scope A.K.A package scope is available in all source files of a package. They can be changed anywhere in the code.</p>
+<p>Local scope is defined inside of a function. They can only be changed inside the code.</p>
+<h3 id="printing">Printing <a href="#printing" class="anchor">🔗</a></h3><p>The <code>fmt</code> package which uses <code>Println</code> also has the <code>Printf</code> function, which uses a format-string as its first argument - <code>func Printf(format string, list of variables to be printed)</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;Original Value of number: %d\n&#34;</span>,number)
+</span></span></code></pre></div><p>We used <code>%d</code> because number is an integer. <code>%t</code> prints boolean, <code>%s</code> prints string and so on. <code>\n</code> prints a new line</p>
+<h2 id="elementary-types">Elementary Types <a href="#elementary-types" class="anchor">🔗</a></h2><p>The three main elementary types in Go are:</p>
+<ul>
+<li>Boolean</li>
+<li>Numeric</li>
+<li>Character</li>
+</ul>
+<p>Unless you have a good reason to, stick to the following types:</p>
+<ul>
+<li><code>bool</code></li>
+<li><code>string</code></li>
+<li><code>int</code></li>
+<li><code>uint32</code></li>
+<li><code>byte</code></li>
+<li><code>rune</code></li>
+<li><code>float64</code></li>
+<li><code>complex128</code></li>
+</ul>
+<p><code>Read more on types</code></p>
+<h2 id="operators">Operators <a href="#operators" class="anchor">🔗</a></h2><p>Built-in operators in Go: Arithmetic, Logical, and Bitwise.</p>
+<h3 id="arithmetic-operators">Arithmetic Operators <a href="#arithmetic-operators" class="anchor">🔗</a></h3><p>Binary operators <strong>+</strong>, <strong>-</strong>, <strong>*</strong>, and <strong>/</strong> that exist for both integers and floats</p>
+<h3 id="logical-operators">Logical Operators <a href="#logical-operators" class="anchor">🔗</a></h3><p>The following are logical operators present in Go: <code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&gt;</code> , <code>&lt;=</code>, <code>&gt;=</code></p>
+<p><strong>Boolean Logical Operators</strong></p>
+<ul>
+<li><strong>AND</strong> operator (<code>&amp;&amp;</code>)</li>
+<li><strong>OR</strong> operator (<code>||</code>)</li>
+<li><strong>NOT</strong> operator (<code>!</code>)</li>
+</ul>
+<h3 id="bitwise-operators">Bitwise operators <a href="#bitwise-operators" class="anchor">🔗</a></h3><p>They are used to manipulate individual bits of integer values. Go supports the following bitwise operators:</p>
+<ol>
+<li>
+<p><strong>Bitwise AND (&amp;):</strong></p>
+<ul>
+<li>The bitwise AND operator compares each bit of the first operand to the corresponding bit of the second operand. If both bits are 1, the resulting bit is 1; otherwise, it&rsquo;s 0.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>result <span style="color:#666">:=</span> <span style="color:#666">5</span> <span style="color:#666">&amp;</span> <span style="color:#666">3</span> <span style="color:#080;font-style:italic">// Binary: 0101 &amp; 0011 = 0001</span>
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#00a000">Println</span>(result) <span style="color:#080;font-style:italic">// Output: 1</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Bitwise OR (|):</strong></p>
+<ul>
+<li>The bitwise OR operator compares each bit of the first operand to the corresponding bit of the second operand. If at least one bit is 1, the resulting bit is 1; otherwise, it&rsquo;s 0.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>result <span style="color:#666">:=</span> <span style="color:#666">5</span> | <span style="color:#666">3</span> <span style="color:#080;font-style:italic">// Binary: 0101 | 0011 = 0111</span>
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#00a000">Println</span>(result) <span style="color:#080;font-style:italic">// Output: 7</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Bitwise XOR (^):</strong></p>
+<ul>
+<li>The bitwise XOR (exclusive OR) operator compares each bit of the first operand to the corresponding bit of the second operand. If the bits are different, the resulting bit is 1; if they are the same, the resulting bit is 0.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>result <span style="color:#666">:=</span> <span style="color:#666">5</span> ^ <span style="color:#666">3</span> <span style="color:#080;font-style:italic">// Binary: 0101 ^ 0011 = 0110</span>
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#00a000">Println</span>(result) <span style="color:#080;font-style:italic">// Output: 6</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Bitwise NOT (~):</strong></p>
+<ul>
+<li>The bitwise NOT operator inverts each bit of the operand. It turns 1s into 0s and 0s into 1s.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>result <span style="color:#666">:=</span> ^<span style="color:#666">5</span> <span style="color:#080;font-style:italic">// Binary: ^0101 = 1010</span>
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#00a000">Println</span>(result) <span style="color:#080;font-style:italic">// Output: -6 (in 2&#39;s complement form)</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Left Shift (&laquo;):</strong></p>
+<ul>
+<li>The left shift operator shifts the bits of the left operand to the left by a specified number of positions. The vacant positions on the right are filled with zeros.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>result <span style="color:#666">:=</span> <span style="color:#666">5</span> <span style="color:#666">&lt;&lt;</span> <span style="color:#666">1</span> <span style="color:#080;font-style:italic">// Binary: 0101 &lt;&lt; 1 = 1010</span>
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#00a000">Println</span>(result) <span style="color:#080;font-style:italic">// Output: 10</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Right Shift (&raquo;):</strong></p>
+<ul>
+<li>The right shift operator shifts the bits of the left operand to the right by a specified number of positions. The vacant positions on the left are filled based on the sign bit (for signed integers).</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>result <span style="color:#666">:=</span> <span style="color:#666">5</span> <span style="color:#666">&gt;&gt;</span> <span style="color:#666">1</span> <span style="color:#080;font-style:italic">// Binary: 0101 &gt;&gt; 1 = 0010</span>
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#00a000">Println</span>(result) <span style="color:#080;font-style:italic">// Output: 2</span>
+</span></span></code></pre></div></li>
+</ol>
+<p>Bitwise operators are often used in low-level programming, such as device drivers or cryptographic algorithms, where fine-grained control over individual bits is required.</p>
+<h2 id="strings">Strings <a href="#strings" class="anchor">🔗</a></h2><p>Two kinds of string literals exist:</p>
+<ul>
+<li>Interpreted strings</li>
+<li>Raw strings</li>
+</ul>
+<p><strong>Interpreted Strings</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#b44">&#34;\n&#34;</span> <span style="color:#080;font-style:italic">// represents a newline</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">&#34;\r&#34;</span> <span style="color:#080;font-style:italic">// represents a carriage return</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">&#34;\t&#34;</span> <span style="color:#080;font-style:italic">// represents a tab</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">&#34;\u&#34;</span> <span style="color:#080;font-style:italic">// represents Unicode characters</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">&#34;\U&#34;</span> <span style="color:#080;font-style:italic">// also represents Unicode characters</span>
+</span></span></code></pre></div><p><strong>Raw Strings</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#b44">`This is a raw string \n`</span>
+</span></span></code></pre></div><p>The length of a string <code>str</code> (the number of bytes) is given by the <code>len()</code> function</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f">len</span>(str)
+</span></span></code></pre></div><h3 id="concatenation-of-strings">Concatenation of strings <a href="#concatenation-of-strings" class="anchor">🔗</a></h3><p>Two strings <code>s1</code> and <code>s2</code> can be made into one string <code>s</code> with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>s <span style="color:#666">:=</span> s1 <span style="color:#666">+</span> s2
+</span></span></code></pre></div><p>HasPrefix - <code>strings.HasPrefix(s, prefix string) bool</code></p>
+<p>HasSuffix - <code>strings.HasSuffix(s, suffix string) bool</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">var</span> str <span style="color:#0b0;font-weight:bold">string</span> = <span style="color:#b44">&#34;This is an example of a string&#34;</span>
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;T/F? \nDoes the string \&#34;%s\&#34; have prefix %s? &#34;</span>, str, <span style="color:#b44">&#34;Th&#34;</span>)
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;\n%t\n\n&#34;</span>, strings.<span style="color:#00a000">HasPrefix</span>(str, <span style="color:#b44">&#34;Th&#34;</span>))    <span style="color:#080;font-style:italic">// Finding prefix</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;Does the string \&#34;%s\&#34; have suffix %s? &#34;</span>, str, <span style="color:#b44">&#34;ting&#34;</span>)
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;\n%t\n\n&#34;</span>, strings.<span style="color:#00a000">HasSuffix</span>(str, <span style="color:#b44">&#34;ting&#34;</span>))  <span style="color:#080;font-style:italic">// Finding suffix</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Contains - <code>strings.HasSuffix(s, suffix string) bool</code></p>
+<p>Index - <code>strings.Index(s, str string) int</code></p>
+<p>LastIndex - <code>strings.LastIndex(s, str string) int</code></p>
+<p>IndexRune - <code>strings.IndexRune(s string, ch int) int.</code></p>
+<p>Replace - <code>strings.Replace(str, old, new string, n int)</code></p>
+<p>Count - <code>strings.Count(s, str string) int</code></p>
+<p>Repeat - <code>strings.Repeat(s, count int) string</code></p>
+<p>ToLower - <code>strings.ToLower(s) string</code></p>
+<p>ToUpper - <code>strings.ToUpper(s) string</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">var</span> orig <span style="color:#0b0;font-weight:bold">string</span> = <span style="color:#b44">&#34;Hey, how are you George?&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">var</span> lower <span style="color:#0b0;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">var</span> upper <span style="color:#0b0;font-weight:bold">string</span>
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;The original string is: %s\n&#34;</span>, orig)
+</span></span><span style="display:flex;"><span>    lower = strings.<span style="color:#00a000">ToLower</span>(orig)     <span style="color:#080;font-style:italic">// changing to lower case</span>
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;The lowercase string is: %s\n&#34;</span>, lower)
+</span></span><span style="display:flex;"><span>    upper = strings.<span style="color:#00a000">ToUpper</span>(orig)     <span style="color:#080;font-style:italic">// changing to upper case</span>
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;The uppercase string is: %s\n&#34;</span>, upper)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>TrimSpace - <code>strings.TrimSpace(s)</code></p>
+<p>To trim a specific string <code>str</code> from a string <code>s</code>, use:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>strings.<span style="color:#00a000">Trim</span>(s, str)
+</span></span></code></pre></div><p>Split String on whitespaces - <code>strings.Fields(s)</code></p>
+<p>Split String on separator - <code>strings.Split(s, sep)</code>. The separator can be :<code>,</code>;<code>,</code>,<code>,</code>-</p>
+<p>Join over a slice - <code>strings.Join(sl []string, sep string)</code></p>
+<p>Read String - <code>strings.NewReader(str)</code></p>
+<h3 id="conversion-to-and-from-a-string">Conversion to and from a string <a href="#conversion-to-and-from-a-string" class="anchor">🔗</a></h3><p>Package <em>strconv</em> contains a few variables to calculate the size in bits of the int of the platform on which the program runs:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>strconv.IntSize
+</span></span></code></pre></div><p>Converting a variable of a certain type to a string will always succeed. For converting from numbers, we have the following functions:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>strconv.<span style="color:#00a000">Itoa</span>(i <span style="color:#0b0;font-weight:bold">int</span>) <span style="color:#0b0;font-weight:bold">string</span>
+</span></span></code></pre></div><p>It returns the decimal string representation of <code>i</code>. Next, we have:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>strconv.<span style="color:#00a000">FormatFloat</span>(f <span style="color:#0b0;font-weight:bold">float64</span>, fmt <span style="color:#0b0;font-weight:bold">byte</span>, prec <span style="color:#0b0;font-weight:bold">int</span>, bitSize <span style="color:#0b0;font-weight:bold">int</span>) <span style="color:#0b0;font-weight:bold">string</span>
+</span></span></code></pre></div><p>It converts the 64-bit floating-point number <code>f</code> to a string, according to the format fmt (can be ‘b’,‘e’, ‘f’ or ‘g’), precision <code>prec</code>, with <code>bitSize</code> being <strong>32</strong> for float32 or <strong>64</strong> for float64.</p>
+<p>For converting to numbers, we have the following functions:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>strconv.<span style="color:#00a000">Atoi</span>(s <span style="color:#0b0;font-weight:bold">string</span>) (i <span style="color:#0b0;font-weight:bold">int</span>, err <span style="color:#0b0;font-weight:bold">error</span>)
+</span></span></code></pre></div><p>It converts to an int. Second, we have:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>strconv.<span style="color:#00a000">ParseFloat</span>(s <span style="color:#0b0;font-weight:bold">string</span>, bitSize <span style="color:#0b0;font-weight:bold">int</span>) (f <span style="color:#0b0;font-weight:bold">float64</span>, err <span style="color:#0b0;font-weight:bold">error</span>)
+</span></span></code></pre></div><p>It converts to a <strong>64</strong>-bit floating-point number</p>
+<p>As can be seen from the return-type these functions will return 2 values: the converted value (if possible) and the possible error. So, when calling such a function, the multiple assignment form will be used:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>val, err = strconv.<span style="color:#00a000">Atoi</span>(s)
+</span></span></code></pre></div><p>Converting a string to another type will not always be possible (as in the case of the functions Atoi and ParseFloat above). Therefore, a <em>runtime</em> error is thrown: <code>parsing &quot;...&quot;: invalid argument</code>.</p>
+<h2 id="time-and-dates">Time and Dates <a href="#time-and-dates" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>t <span style="color:#666">:=</span> time.<span style="color:#00a000">Now</span>()
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;%02d.%02d.%4d\n&#34;</span>, t.<span style="color:#00a000">Day</span>(), t.<span style="color:#00a000">Month</span>(), t.<span style="color:#00a000">Year</span>()) <span style="color:#080;font-style:italic">// e.g.: 29.10.2019</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> (t Time) <span style="color:#00a000">Format</span>(s <span style="color:#0b0;font-weight:bold">string</span>) <span style="color:#0b0;font-weight:bold">string</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>t <span style="color:#666">:=</span> time.<span style="color:#00a000">Now</span>().<span style="color:#00a000">UTC</span>()
+</span></span><span style="display:flex;"><span>fmt.<span style="color:#00a000">Println</span>(t.<span style="color:#00a000">Format</span>(<span style="color:#b44">&#34;02 Jan 2006 15:04&#34;</span>))<span style="color:#080;font-style:italic">// e.g: 29 Oct 2019 11:00</span>
+</span></span></code></pre></div><h2 id="pointers">Pointers <a href="#pointers" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">var</span> i1 = <span style="color:#666">5</span>
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;An integer: %d, it&#39;s location in memory: %p\n&#34;</span>, i1, <span style="color:#666">&amp;</span>i1)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// An integer: 5, it&#39;s location in memory: 0xc82000a270</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>intP = &amp;i1
+</span></span></code></pre></div><p>So, <code>intP</code> stores the memory address of <code>i1</code> which means it points to the location of <code>i1</code>. In other words, it references the variable <code>i1</code>.</p>
+<p>👉🏽 See <a href="https://notes.thanni.co/learning-go" target="_blank" rel="noopener">all notes</a> in this series</p>
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://notes.bythanni.com/tags/go-notes">go-notes</a>
+            
+        </div>
+    
+    
+    
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://github.com/" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#A9B5C2"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+        © Copyright 2024 Thanni
+    
+    </div>
+
+    
+</footer>
+
+
+
+  </body>
+</html>

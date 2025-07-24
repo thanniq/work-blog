@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ruby-Notes on Thanni - SWE</title>
+    <link>https://notes.bythanni.com/tags/ruby-notes/</link>
+    <description>Recent content in Ruby-Notes on Thanni - SWE</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://notes.bythanni.com/tags/ruby-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning Ruby: Classes &amp; Objects</title>
+      <link>https://notes.bythanni.com/learning-ruby-classes-objects/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-ruby-classes-objects/</guid>
+      <description>&lt;p&gt;Classes in ruby are first-class objects. Each is an instance of class &lt;code&gt;Class&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;A class can be defined simply as:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#00f&#34;&gt;House&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Learning Ruby: Loops &amp; Blocks</title>
+      <link>https://notes.bythanni.com/learning-ruby-loops-blocks/</link>
+      <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-ruby-loops-blocks/</guid>
+      <description>&lt;p&gt;A loop is a control structure that allows you to repeatedly execute a block of code.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ruby&#34; data-lang=&#34;ruby&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f&#34;&gt;loop&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;do&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#x9;&lt;span style=&#34;color:#a2f&#34;&gt;puts&lt;/span&gt; &lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;I&amp;#39;m looping...&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;end&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>Learning Ruby: Methods &amp; Functions</title>
+      <link>https://notes.bythanni.com/learning-ruby-methods-functions/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/learning-ruby-methods-functions/</guid>
+      <description>&lt;p&gt;Methods are a way to encapsulate and provide names for ruby expressions. It helps avoid code duplication, so we can keep calling the same methods when we need them.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
