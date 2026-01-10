@@ -1,6 +1,6 @@
 +++
 author = "Thanni"
-title = "Understanding Artificial Intelligence"
+title = "Understanding Artificial Intelligence Test"
 date = "2023-12-22"
 description = "A beginner's guide to AI"
 tags = [
