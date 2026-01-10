@@ -1,6 +1,6 @@
 +++
 author = "Thanni"
-title = "Learning Ruby"
+title = "Learning Ruby Test"
 date = "2023-11-18"
 description = "Learning Ruby"
 tags = [
