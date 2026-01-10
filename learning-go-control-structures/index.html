@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Learning Go: Control Structures | Thanni - SWE</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="Learning Go">
+<meta name="generator" content="Hugo 0.148.1">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+ 
+    
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	
+	<a href ="https://thanni.co">Portfolio</a>
+	<a href="/posts">Archive</a>
+	
+	<a href ="mailto:hello@thanni.work" class="button">Hire Me</a>
+	
+
+	
+
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">Learning Go: Control Structures</h1>
+
+    <div class="tip">
+        <time datetime="2023-12-19 00:00:00 &#43;0000 UTC">Dec 19, 2023</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          3 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-if-else-construct">The <code>if-else</code> Construct</a>
+      <ul>
+        <li><a href="#testing-for-errors-on-functions"><strong>Testing for Errors on Functions</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#the-switch-case-construct">The <code>switch-case</code> construct</a></li>
+    <li><a href="#the-for-construct">The <code>for</code> construct</a>
+      <ul>
+        <li><a href="#use-of-for-range-of-for-range">Use of for range of <code>for range</code></a></li>
+        <li><a href="#labels">Labels</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>Go Control Structures empower precise flow: loops for iteration, conditionals for decisions. Simplifying logic with elegance and efficiency</p>
+<p>Go provides the following conditional or branching structures:</p>
+<ul>
+<li>The <code>if-else</code> construct</li>
+<li>The <code>switch-case</code> construct</li>
+<li>The <code>for</code> construct</li>
+</ul>
+<h2 id="the-if-else-construct">The <code>if-else</code> Construct <a href="#the-if-else-construct" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> condition {
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// do something</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#666">......</span>.
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> condition {
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// do something</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#a2f;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// do something else</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#666">......</span>.
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> condition1 {
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// do something</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#a2f;font-weight:bold">else</span> <span style="color:#a2f;font-weight:bold">if</span> condition2 {
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// do something else</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#a2f;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// catch-all or default</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#666">......</span>.
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> <span style="color:#a2f;font-weight:bold">true</span> {
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;I&#39;m always executing this branch&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#666">......</span>.
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> <span style="color:#a2f;font-weight:bold">false</span> {
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;I will never execute this code!&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="testing-for-errors-on-functions"><strong>Testing for Errors on Functions</strong> <a href="#testing-for-errors-on-functions" class="anchor">🔗</a></h3><p>An error message is nil if there&rsquo;s no error. So&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#a2f;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#080;font-style:italic">// print the error message</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a2f;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In a situation where we&rsquo;re converting a string to an integer</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span><span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">&#34;strconv&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">var</span> orig <span style="color:#0b0;font-weight:bold">string</span> = <span style="color:#b44">&#34;ABC&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">var</span> an <span style="color:#0b0;font-weight:bold">int</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">var</span> err <span style="color:#0b0;font-weight:bold">error</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// storing integer and error information</span>
+</span></span><span style="display:flex;"><span>    an, err = strconv.<span style="color:#00a000">Atoi</span>(orig)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#a2f;font-weight:bold">nil</span> { <span style="color:#080;font-style:italic">// if it was an error, discontinue</span>
+</span></span><span style="display:flex;"><span>        fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;orig %s is not an integer - exiting with error\n&#34;</span>, orig)
+</span></span><span style="display:flex;"><span>        <span style="color:#a2f;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;The integer is %d\n&#34;</span>, an)
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// rest of the code</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="the-switch-case-construct">The <code>switch-case</code> construct <a href="#the-switch-case-construct" class="anchor">🔗</a></h2><p>We use the switch case if we&rsquo;re looking to compare a variable to different values. And each value should give a unique result.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">switch</span> var1 {
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">case</span> val1:
+</span></span><span style="display:flex;"><span><span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">case</span> val2:
+</span></span><span style="display:flex;"><span><span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">default</span>:
+</span></span><span style="display:flex;"><span><span style="color:#666">...</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// if there&#39;s only one value, it can be written as</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">case</span> val1, val2, val3:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// for cases where there&#39;s no return, you can use the fallthrough</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">switch</span> i {
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">case</span> <span style="color:#666">0</span>: <span style="color:#a2f;font-weight:bold">fallthrough</span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">case</span> <span style="color:#666">1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#00a000">f</span>() <span style="color:#080;font-style:italic">// f is now also called when i==0!</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="the-for-construct">The <code>for</code> construct <a href="#the-for-construct" class="anchor">🔗</a></h2><p><strong>Types of for loops</strong></p>
+<p>There are <em>two</em> methods to control iteration:</p>
+<ul>
+<li><em>Counter-controlled</em> iteration</li>
+<li><em>Condition-controlled</em> iteration</li>
+</ul>
+<p>The simplest form is the counter-controlled iteration. The general format is:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">for</span> initialization; condition; modification { }
+</span></span></code></pre></div><p>For example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#666">0</span>; i &lt; <span style="color:#666">10</span>; i<span style="color:#666">++</span> {}
+</span></span></code></pre></div><p>For condition controlled</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">for</span> condition { }
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">var</span> i <span style="color:#0b0;font-weight:bold">int</span> = <span style="color:#666">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// condition controlled for loop with 5 iterations</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">for</span> i &lt; <span style="color:#666">5</span> {
+</span></span><span style="display:flex;"><span>        fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;This is the %d iteration\n&#34;</span>, i)
+</span></span><span style="display:flex;"><span>        i = i <span style="color:#666">+</span> <span style="color:#666">1</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Infinite loop is written as <code>for { }</code></p>
+<h3 id="use-of-for-range-of-for-range">Use of for range of <code>for range</code> <a href="#use-of-for-range-of-for-range" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">for</span> pos, char <span style="color:#666">:=</span> <span style="color:#a2f;font-weight:bold">range</span> str {
+</span></span><span style="display:flex;"><span>        fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;Character on position %d is: %c \n&#34;</span>, pos, char)
+</span></span><span style="display:flex;"><span>    }
+</span></span></code></pre></div><p>In the above code, pos is the index, char is the value.</p>
+<h3 id="labels">Labels <a href="#labels" class="anchor">🔗</a></h3><p>Labels are identifiers associated with a statement in your code. You can use labels with control flow statements like <code>break</code> and <code>continue</code> to specify which loop or switch statement you want to break out of or continue.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// Define a label called &#34;outer&#34;</span>
+</span></span><span style="display:flex;"><span>outer:
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#666">0</span>; i &lt; <span style="color:#666">3</span>; i<span style="color:#666">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a2f;font-weight:bold">for</span> j <span style="color:#666">:=</span> <span style="color:#666">0</span>; j &lt; <span style="color:#666">3</span>; j<span style="color:#666">++</span> {
+</span></span><span style="display:flex;"><span>            <span style="color:#a2f;font-weight:bold">if</span> i <span style="color:#666">==</span> <span style="color:#666">1</span> <span style="color:#666">&amp;&amp;</span> j <span style="color:#666">==</span> <span style="color:#666">1</span> {
+</span></span><span style="display:flex;"><span>                <span style="color:#080;font-style:italic">// Use the &#34;outer&#34; label to break out of the outer loop</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a2f;font-weight:bold">break</span> outer
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;%d %d\n&#34;</span>, i, j)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>In this example, the <code>outer</code> label is associated with the outer <code>for</code> loop. When the condition <code>i == 1 &amp;&amp; j == 1</code> is met, the <code>break outer</code> statement is executed, causing the program to exit the outer loop immediately.</p>
+<p>👉🏽 See <a href="https://notes.thanni.co/learning-go" target="_blank" rel="noopener">all notes</a> in this series</p>
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://notes.bythanni.com/tags/go-notes">go-notes</a>
+            
+        </div>
+    
+    
+    
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://github.com/" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#A9B5C2"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+        © Copyright 2024 Thanni
+    
+    </div>
+
+    
+</footer>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>Learning Go: Functions | Thanni - SWE</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="Learning Go">
+<meta name="generator" content="Hugo 0.148.1">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+ 
+    
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	
+	<a href ="https://thanni.co">Portfolio</a>
+	<a href="/posts">Archive</a>
+	
+	<a href ="mailto:hello@thanni.work" class="button">Hire Me</a>
+	
+
+	
+
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">Learning Go: Functions</h1>
+
+    <div class="tip">
+        <time datetime="2023-12-29 00:00:00 &#43;0000 UTC">Dec 29, 2023</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          7 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#parameters-and-return-values">Parameters and Return Values</a>
+      <ul>
+        <li><a href="#blank-identifier">Blank Identifier</a></li>
+        <li><a href="#pointing-to-a-variable"><strong>Pointing to a Variable</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#defer-and-tracing">Defer and Tracing</a>
+      <ul>
+        <li><a href="#tracing-with-defer">Tracing with Defer</a></li>
+      </ul>
+    </li>
+    <li><a href="#built-in-functions">Built-In Functions</a></li>
+    <li><a href="#higher-order-functions">Higher Order Functions</a></li>
+    <li><a href="#function-literals">Function Literals</a></li>
+    <li><a href="#functions-as-return-variables">Functions as Return Variables</a></li>
+    <li><a href="#debugging-using-runtime">Debugging using <code>runtime</code></a></li>
+    <li><a href="#debugging-using-log">Debugging using <code>log</code></a></li>
+    <li><a href="#timing-a-function">Timing a function</a></li>
+    <li><a href="#using-memoization-for-performance">Using Memoization for Performance</a></li>
+    <li><a href="#recursion">Recursion</a></li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>Go Control Structures empower precise flow: loops for iteration, conditionals for decisions. Simplifying logic with elegance and efficiency</p>
+<p>There are <strong>3</strong> types of functions in Go:</p>
+<ul>
+<li>Normal functions with an identifier</li>
+<li>Anonymous or lambda functions</li>
+<li>Methods</li>
+</ul>
+<p>Any of these can have parameters and return values.</p>
+<p><strong>Function call within a function call</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#00a000">f1</span>(<span style="color:#00a000">f2</span>(a, b))
+</span></span></code></pre></div><p>Functions are first-class values. They can be assigned to a variable, like in:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>add <span style="color:#666">:=</span> binOp
+</span></span></code></pre></div><h2 id="parameters-and-return-values">Parameters and Return Values <a href="#parameters-and-return-values" class="anchor">🔗</a></h2><p>A function with no parameters is called a <strong>niladic function</strong>, like <code>main.main()</code></p>
+<p><strong>Call by value or call by reference</strong></p>
+<p><strong>Call by Value:</strong></p>
+<ul>
+<li>For basic data types (integers, floats, strings, etc.), the actual value is passed to the function. Any modifications made to the parameter inside the function do not affect the original variable outside the function.</li>
+</ul>
+<p><strong>Call by Value with Pointers:</strong></p>
+<ul>
+<li>For slices, maps, channels, and structs, the reference (a pointer) to the underlying data structure is passed. Changes to the data through the pointer inside the function will affect the original data outside the function.</li>
+</ul>
+<p>Some functions just perform a task and do not return values. They perform what is called a <em>side-effect</em>, like printing to the console, sending a mail, logging an error, and so on. However, most functions return values, which can be named or unnamed.</p>
+<p>UnNamed Return</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">getX2AndX3</span>(input <span style="color:#0b0;font-weight:bold">int</span>)(<span style="color:#0b0;font-weight:bold">int</span>, <span style="color:#0b0;font-weight:bold">int</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#666">2</span> <span style="color:#666">*</span> input, <span style="color:#666">3</span> <span style="color:#666">*</span> input
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// return are not named</span>
+</span></span></code></pre></div><p>Named Return</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">getX2AndX3_2</span>(input <span style="color:#0b0;font-weight:bold">int</span>)(x2 <span style="color:#0b0;font-weight:bold">int</span>, x3 <span style="color:#0b0;font-weight:bold">int</span>) {
+</span></span><span style="display:flex;"><span>    x2 = <span style="color:#666">2</span> <span style="color:#666">*</span> input
+</span></span><span style="display:flex;"><span>    x3 = <span style="color:#666">3</span> <span style="color:#666">*</span> input
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">//return x2, x3</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// return values are named so the keyword &#34;return&#34; would suffice</span>
+</span></span></code></pre></div><h3 id="blank-identifier">Blank Identifier <a href="#blank-identifier" class="anchor">🔗</a></h3><p><code>_</code> is used to <em>discard</em> values</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">ThreeValues</span>()(<span style="color:#0b0;font-weight:bold">int</span>, <span style="color:#0b0;font-weight:bold">int</span>, <span style="color:#0b0;font-weight:bold">float32</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#666">5</span>, <span style="color:#666">6</span>, <span style="color:#666">7.5</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>i1, _, f1 = <span style="color:#00a000">ThreeValues</span>()
+</span></span></code></pre></div><h3 id="pointing-to-a-variable"><strong>Pointing to a Variable</strong> <a href="#pointing-to-a-variable" class="anchor">🔗</a></h3><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>n <span style="color:#666">:=</span> <span style="color:#666">0</span>
+</span></span><span style="display:flex;"><span>new_n <span style="color:#666">:=</span> <span style="color:#666">&amp;</span>n
+</span></span></code></pre></div><p>A pointer variable in programming is a variable that stores the memory address of another variable. In other words, it &ldquo;points&rdquo; to the memory location of a value.</p>
+<p>Here are some key points about pointer variables:</p>
+<ol>
+<li>
+<p><strong>Memory Address:</strong></p>
+<ul>
+<li>A pointer variable holds the memory address of another variable rather than the actual value.</li>
+<li>It allows direct manipulation of memory, which can be useful for tasks like dynamic memory allocation.</li>
+</ul>
+</li>
+<li>
+<p><strong>Declaration and Initialization:</strong></p>
+<ul>
+<li>
+<p>You declare a pointer variable by adding an asterisk (*) before the variable name. For example: <code>var ptr *int</code>.</p>
+</li>
+<li>
+<p>You can initialize a pointer by assigning the memory address of a variable to it.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">var</span> x <span style="color:#0b0;font-weight:bold">int</span> = <span style="color:#666">42</span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">var</span> ptr <span style="color:#666">*</span><span style="color:#0b0;font-weight:bold">int</span> = <span style="color:#666">&amp;</span>x <span style="color:#080;font-style:italic">// ptr now holds the memory address of x</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Dereferencing:</strong></p>
+<ul>
+<li>
+<p>To access the value pointed to by a pointer, you use the dereference operator (*).</p>
+</li>
+<li>
+<p>Example: <code>value := *ptr</code> gets the value stored at the memory address pointed to by <code>ptr</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>fmt.<span style="color:#00a000">Println</span>(<span style="color:#666">*</span>ptr) <span style="color:#080;font-style:italic">// prints the value stored at the memory address pointed to by ptr</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Null Pointers:</strong></p>
+<ul>
+<li>
+<p>In many languages, pointers can have a special value called <code>null</code> or <code>nil</code>, indicating that they do not point to a valid memory address.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">var</span> ptr <span style="color:#666">*</span><span style="color:#0b0;font-weight:bold">int</span> <span style="color:#080;font-style:italic">// uninitialized pointer (nil)</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>Pointer Arithmetic:</strong></p>
+<ul>
+<li>Some languages (like C and C++) allow pointer arithmetic, but Go does not. Go restricts direct manipulation of memory addresses for safety.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#080;font-style:italic">// This is invalid in Go</span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// ptr = ptr + 1 // pointer arithmetic not allowed</span>
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="defer-and-tracing">Defer and Tracing <a href="#defer-and-tracing" class="anchor">🔗</a></h2><p>Defer is used to postpone function calls until the parent function is done executing.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#00a000">Function1</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">Function1</span>() {
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;In Function1 at the top\n&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">defer</span> <span style="color:#00a000">Function2</span>() <span style="color:#080;font-style:italic">// function deferred, will be executed after Function1 is done.</span>
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;In Function1 at the bottom!\n&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">Function2</span>() {
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;Function2: Deferred until the end of the calling function!&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This defer function can be used to inverse a sequence of execution like in a stack (LIFO).</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#666">0</span>; i &lt; <span style="color:#666">5</span>; i<span style="color:#666">++</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a2f;font-weight:bold">defer</span> fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;%d &#34;</span>, i)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// output 4, 3, 2, 1, 0</span>
+</span></span></code></pre></div><p>The last deferred is the first to be executed in the above code.</p>
+<h3 id="tracing-with-defer">Tracing with Defer <a href="#tracing-with-defer" class="anchor">🔗</a></h3><p>When you want to trace the execution flow of a function, you can use <code>defer</code> to schedule logging statements at the beginning and end of the function.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">myFunction</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// Trace start of function</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">defer</span> <span style="color:#00a000">trace</span>(<span style="color:#b44">&#34;myFunction - start&#34;</span>)()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// Function logic goes here</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// Trace end of function</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">defer</span> <span style="color:#00a000">trace</span>(<span style="color:#b44">&#34;myFunction - end&#34;</span>)()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">trace</span>(msg <span style="color:#0b0;font-weight:bold">string</span>) <span style="color:#a2f;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Println</span>(<span style="color:#b44">&#34;Entering:&#34;</span>, msg)
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#a2f;font-weight:bold">func</span>() {
+</span></span><span style="display:flex;"><span>        fmt.<span style="color:#00a000">Println</span>(<span style="color:#b44">&#34;Exiting:&#34;</span>, msg)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Using <code>defer</code> with tracing in Golang allows you to log information about the entry and exit of functions, aiding in debugging and performance analysis.</p>
+<h2 id="built-in-functions">Built-In Functions <a href="#built-in-functions" class="anchor">🔗</a></h2><p>Examples include <code>close, len, cap, new, make, copy, append, panic, recover, print, println, complex, real, imag</code></p>
+<h2 id="higher-order-functions">Higher Order Functions <a href="#higher-order-functions" class="anchor">🔗</a></h2><p>Functions can also be passed as values</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">inc1</span>(x <span style="color:#0b0;font-weight:bold">int</span>) <span style="color:#0b0;font-weight:bold">int</span> { <span style="color:#a2f;font-weight:bold">return</span> x<span style="color:#666">+</span><span style="color:#666">1</span> }
+</span></span><span style="display:flex;"><span>f1 <span style="color:#666">:=</span> inc1 <span style="color:#080;font-style:italic">// f1 := func (x int) int { return x+1 }</span>
+</span></span></code></pre></div><h2 id="function-literals">Function Literals <a href="#function-literals" class="anchor">🔗</a></h2><p>Sometimes, we do not want to give a function a name. Instead, we can make an <strong>anonymous function</strong> (also known as a <em>lambda</em> function, a <em>function literal</em>, or a <em>closure</em>), for example:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span>(x, y <span style="color:#0b0;font-weight:bold">int</span>) <span style="color:#0b0;font-weight:bold">int</span> { <span style="color:#a2f;font-weight:bold">return</span> x <span style="color:#666">+</span> y }
+</span></span></code></pre></div><p>Such function cannot stand on its own, so it needs to be assigned to a variable or invoked directly.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>fplus <span style="color:#666">:=</span> <span style="color:#a2f;font-weight:bold">func</span>(x, y <span style="color:#0b0;font-weight:bold">int</span>) <span style="color:#0b0;font-weight:bold">int</span> { <span style="color:#a2f;font-weight:bold">return</span> x <span style="color:#666">+</span> y }
+</span></span><span style="display:flex;"><span><span style="color:#00a000">fplus</span>(<span style="color:#666">3</span>,<span style="color:#666">4</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// directly</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span>(x, y <span style="color:#0b0;font-weight:bold">int</span>) <span style="color:#0b0;font-weight:bold">int</span> { <span style="color:#a2f;font-weight:bold">return</span> x <span style="color:#666">+</span> y } (<span style="color:#666">3</span>, <span style="color:#666">4</span>)
+</span></span></code></pre></div><h2 id="functions-as-return-variables">Functions as Return Variables <a href="#functions-as-return-variables" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">type</span> flt <span style="color:#a2f;font-weight:bold">func</span>(<span style="color:#0b0;font-weight:bold">int</span>) <span style="color:#0b0;font-weight:bold">bool</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">genInc</span>() flt {
+</span></span><span style="display:flex;"><span>    y <span style="color:#666">:=</span> <span style="color:#a2f;font-weight:bold">func</span>(x <span style="color:#0b0;font-weight:bold">int</span>) <span style="color:#0b0;font-weight:bold">bool</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a2f;font-weight:bold">return</span> x &gt; <span style="color:#666">2</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">return</span> y
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>    increment <span style="color:#666">:=</span> <span style="color:#00a000">genInc</span>()
+</span></span><span style="display:flex;"><span>    result <span style="color:#666">:=</span> <span style="color:#00a000">increment</span>(<span style="color:#666">3</span>)
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Println</span>(result)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="debugging-using-runtime">Debugging using <code>runtime</code> <a href="#debugging-using-runtime" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;runtime&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>    where <span style="color:#666">:=</span> <span style="color:#a2f;font-weight:bold">func</span>() { <span style="color:#080;font-style:italic">// debugging function</span>
+</span></span><span style="display:flex;"><span>        _, file, line, _ <span style="color:#666">:=</span> runtime.<span style="color:#00a000">Caller</span>(<span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>        log.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;%s:%d&#34;</span>, file, line)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a000">where</span>() <span style="color:#080;font-style:italic">// Print file and line information for the first time</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// some code</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    a <span style="color:#666">:=</span> <span style="color:#666">2</span> <span style="color:#666">*</span> <span style="color:#666">5</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#00a000">where</span>() <span style="color:#080;font-style:italic">// Print file and line information after calculating &#39;a&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// some more code</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    b <span style="color:#666">:=</span> a <span style="color:#666">+</span> <span style="color:#666">100</span>
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Println</span>(<span style="color:#b44">&#34;a: &#34;</span>, a)
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Println</span>(<span style="color:#b44">&#34;b: &#34;</span>, b)
+</span></span><span style="display:flex;"><span>    <span style="color:#00a000">where</span>() <span style="color:#080;font-style:italic">// Print file and line information after calculating &#39;b&#39;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="debugging-using-log">Debugging using <code>log</code> <a href="#debugging-using-log" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b44">&#34;log&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#b44">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>	log.<span style="color:#00a000">Println</span>(<span style="color:#b44">&#34;Program started&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	result, err <span style="color:#666">:=</span> <span style="color:#00a000">calculateSquareRoot</span>(<span style="color:#666">-</span><span style="color:#666">4.0</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a2f;font-weight:bold">if</span> err <span style="color:#666">!=</span> <span style="color:#a2f;font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		log.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;Error: %v&#34;</span>, err)
+</span></span><span style="display:flex;"><span>	} <span style="color:#a2f;font-weight:bold">else</span> {
+</span></span><span style="display:flex;"><span>		log.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;Result: %f&#34;</span>, result)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	log.<span style="color:#00a000">Println</span>(<span style="color:#b44">&#34;Program finished&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">calculateSquareRoot</span>(x <span style="color:#0b0;font-weight:bold">float64</span>) (<span style="color:#0b0;font-weight:bold">float64</span>, <span style="color:#0b0;font-weight:bold">error</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a2f;font-weight:bold">if</span> x &lt; <span style="color:#666">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a2f;font-weight:bold">return</span> <span style="color:#666">0</span>, fmt.<span style="color:#00a000">Errorf</span>(<span style="color:#b44">&#34;cannot calculate square root of a negative number&#34;</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a2f;font-weight:bold">return</span> math.<span style="color:#00a000">Sqrt</span>(x), <span style="color:#a2f;font-weight:bold">nil</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="timing-a-function">Timing a function <a href="#timing-a-function" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;time&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">Calculation</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#666">0</span>; i&lt;<span style="color:#666">10000</span>; i<span style="color:#666">++</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#080;font-style:italic">//do something</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>(){
+</span></span><span style="display:flex;"><span>    start <span style="color:#666">:=</span> time.<span style="color:#00a000">Now</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#00a000">Calculation</span>()
+</span></span><span style="display:flex;"><span>    end <span style="color:#666">:=</span> time.<span style="color:#00a000">Now</span>()
+</span></span><span style="display:flex;"><span>    delta <span style="color:#666">:=</span> end.<span style="color:#00a000">Sub</span>(start)
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;Calculation took this amount of time: %s\n&#34;</span>, delta)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="using-memoization-for-performance">Using Memoization for Performance <a href="#using-memoization-for-performance" class="anchor">🔗</a></h2><p>Memoization is a technique used in computer programming to optimize the execution of functions by caching or storing the results of expensive function calls and returning the cached result when the same inputs occur again. In simpler terms, it&rsquo;s like keeping a memo (memory) of past calculations to avoid redundant work.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">fib</span>(n <span style="color:#0b0;font-weight:bold">int</span>, memo <span style="color:#a2f;font-weight:bold">map</span>[<span style="color:#0b0;font-weight:bold">int</span>]<span style="color:#0b0;font-weight:bold">int</span>) <span style="color:#0b0;font-weight:bold">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a2f;font-weight:bold">if</span> result, found <span style="color:#666">:=</span> memo[n]; found {
+</span></span><span style="display:flex;"><span>		<span style="color:#a2f;font-weight:bold">return</span> result
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a2f;font-weight:bold">if</span> n <span style="color:#666">&lt;=</span> <span style="color:#666">2</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a2f;font-weight:bold">return</span> <span style="color:#666">1</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	result <span style="color:#666">:=</span> <span style="color:#00a000">fib</span>(n<span style="color:#666">-</span><span style="color:#666">1</span>, memo) <span style="color:#666">+</span> <span style="color:#00a000">fib</span>(n<span style="color:#666">-</span><span style="color:#666">2</span>, memo)
+</span></span><span style="display:flex;"><span>	memo[n] = result <span style="color:#080;font-style:italic">// Memoize the result for future use</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a2f;font-weight:bold">return</span> result
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>	memo <span style="color:#666">:=</span> <span style="color:#a2f">make</span>(<span style="color:#a2f;font-weight:bold">map</span>[<span style="color:#0b0;font-weight:bold">int</span>]<span style="color:#0b0;font-weight:bold">int</span>)
+</span></span><span style="display:flex;"><span>	n <span style="color:#666">:=</span> <span style="color:#666">10</span>
+</span></span><span style="display:flex;"><span>	result <span style="color:#666">:=</span> <span style="color:#00a000">fib</span>(n, memo)
+</span></span><span style="display:flex;"><span>	fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;Fibonacci(%d) = %d\n&#34;</span>, n, result)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="recursion">Recursion <a href="#recursion" class="anchor">🔗</a></h2><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#00a000">printrec</span>(<span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">printrec</span>(i <span style="color:#0b0;font-weight:bold">int</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">if</span> i &gt; <span style="color:#666">10</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a2f;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#00a000">printrec</span>(i <span style="color:#666">+</span> <span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;%d &#34;</span>, i)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// output - 10, 9, 8, 7, 6, 5, 4, 3, 2, 1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// printing each iteration before calling the function again will give the reverse.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">package</span> main
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> <span style="color:#b44">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#00a000">printrec</span>(<span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">func</span> <span style="color:#00a000">printrec</span>(i <span style="color:#0b0;font-weight:bold">int</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">if</span> i &gt; <span style="color:#666">10</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a2f;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    fmt.<span style="color:#00a000">Printf</span>(<span style="color:#b44">&#34;%d &#34;</span>, i)
+</span></span><span style="display:flex;"><span>  	<span style="color:#00a000">printrec</span>(i <span style="color:#666">+</span> <span style="color:#666">1</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>👉🏽 See <a href="https://notes.thanni.co/learning-go" target="_blank" rel="noopener">all notes</a> in this series</p>
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://notes.bythanni.com/tags/go-notes">go-notes</a>
+            
+        </div>
+    
+    
+    
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://github.com/" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#A9B5C2"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+        © Copyright 2024 Thanni
+    
+    </div>
+
+    
+</footer>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shopify on Thanni - SWE</title>
+    <link>https://notes.bythanni.com/tags/shopify/</link>
+    <description>Recent content in Shopify on Thanni - SWE</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Nov 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://notes.bythanni.com/tags/shopify/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shopify Liquid</title>
+      <link>https://notes.bythanni.com/shopify-liquid/</link>
+      <pubDate>Thu, 23 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/shopify-liquid/</guid>
+      <description>&lt;p&gt;Unlock the full potential of a Shopify store with Liquid development. This tutorial series is liquid at a glance, and not a replacement for the official documentation.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

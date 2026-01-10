@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Thanni - SWE</title>
+    <link>https://notes.bythanni.com/tags/</link>
+    <description>Recent content in Tags on Thanni - SWE</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 29 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://notes.bythanni.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go-Notes</title>
+      <link>https://notes.bythanni.com/tags/go-notes/</link>
+      <pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/tags/go-notes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://notes.bythanni.com/tags/linux/</link>
+      <pubDate>Thu, 28 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>React</title>
+      <link>https://notes.bythanni.com/tags/react/</link>
+      <pubDate>Thu, 28 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/tags/react/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI-Notes</title>
+      <link>https://notes.bythanni.com/tags/ai-notes/</link>
+      <pubDate>Fri, 22 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/tags/ai-notes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>https://notes.bythanni.com/tags/go/</link>
+      <pubDate>Fri, 08 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Typescript</title>
+      <link>https://notes.bythanni.com/tags/typescript/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/tags/typescript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ruby-Notes</title>
+      <link>https://notes.bythanni.com/tags/ruby-notes/</link>
+      <pubDate>Sun, 26 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/tags/ruby-notes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shopify</title>
+      <link>https://notes.bythanni.com/tags/shopify/</link>
+      <pubDate>Thu, 23 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/tags/shopify/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Networking</title>
+      <link>https://notes.bythanni.com/tags/networking/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>https://notes.bythanni.com/tags/ai/</link>
+      <pubDate>Sat, 18 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ruby</title>
+      <link>https://notes.bythanni.com/tags/ruby/</link>
+      <pubDate>Sat, 18 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://notes.bythanni.com/tags/ruby/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

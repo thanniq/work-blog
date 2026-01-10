@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>React Hooks | Thanni - SWE</title>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+<meta name="viewport" content="width=device-width,minimum-scale=1">
+<meta name="description" content="Learning React">
+<meta name="generator" content="Hugo 0.148.1">
+
+
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+
+ 
+    
+
+
+
+
+
+
+  </head>
+
+  <body>
+    <nav class="navigation">
+	
+		<a href="/"> <span class="arrow">←</span>Home</a>
+	
+	
+	<a href ="https://thanni.co">Portfolio</a>
+	<a href="/posts">Archive</a>
+	
+	<a href ="mailto:hello@thanni.work" class="button">Hire Me</a>
+	
+
+	
+
+</nav>
+
+
+    <main class="main">
+      
+
+<section id="single">
+    <h1 class="title">React Hooks</h1>
+
+    <div class="tip">
+        <time datetime="2023-12-28 00:00:00 &#43;0000 UTC">Dec 28, 2023</time>
+        <span class="split">
+          ·
+        </span>
+        <span>
+          5 minute read
+        </span>
+    </div>
+
+    
+    
+        
+  
+    <aside class="toc">
+      <details>
+          <summary>Table of Contents
+          </summary>
+          <div>
+              <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hook-rules">Hook Rules</a></li>
+    <li><a href="#usestate-hook">useState Hook</a></li>
+    <li><a href="#useeffect-hook">useEffect Hook</a></li>
+    <li><a href="#useref-hook">useRef Hook</a></li>
+    <li><a href="#usememo-hook">useMemo Hook</a></li>
+    <li><a href="#usecallback-hook">useCallback Hook</a></li>
+    <li><a href="#custom-hooks">Custom Hooks</a></li>
+  </ul>
+</nav>
+          </div>
+      </details>
+    </aside>
+  
+
+
+    
+
+
+    <div class="content">
+      <p>Learn the fundamentals of React, exploring its syntax, features, and practical applications.</p>
+<h2 id="hook-rules">Hook Rules <a href="#hook-rules" class="anchor">🔗</a></h2><ol>
+<li>Only Call Hooks at the Top Level</li>
+<li>Only Call Hooks from React Functions</li>
+<li>Use Hooks in the Same Order</li>
+<li>Custom Hooks Should Start with &ldquo;use&rdquo;</li>
+</ol>
+<h2 id="usestate-hook">useState Hook <a href="#usestate-hook" class="anchor">🔗</a></h2><p>The <code>useState</code> hook is fundamental in React for adding state to functional components. It returns an array with two elements: the current state value and a function to update it. Key points about <code>useState</code> include:</p>
+<ol>
+<li>
+<p><strong>Managing Component State:</strong></p>
+<ul>
+<li><code>useState</code> allows functional components to have local state, enabling them to manage and respond to changes.</li>
+</ul>
+</li>
+<li>
+<p><strong>Defining State and Updaters:</strong></p>
+<ul>
+<li>Use array destructuring to define state variables and their corresponding updater functions.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> [count, setCount] <span style="color:#666">=</span> useState(<span style="color:#666">0</span>);
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Immutable State Updates:</strong></p>
+<ul>
+<li>State updates must be performed immutably, either by using the previous state value or a callback function.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>setCount((prevCount) =&gt; prevCount <span style="color:#666">+</span> <span style="color:#666">1</span>);
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Initializing State:</strong></p>
+<ul>
+<li>Pass the initial state as an argument to <code>useState</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> [isOpen, setIsOpen] <span style="color:#666">=</span> useState(<span style="color:#a2f;font-weight:bold">false</span>);
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Multiple State Variables:</strong></p>
+<ul>
+<li>You can use multiple <code>useState</code> calls to manage different pieces of state.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> [name, setName] <span style="color:#666">=</span> useState(<span style="color:#b44">&#34;&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">const</span> [age, setAge] <span style="color:#666">=</span> useState(<span style="color:#666">0</span>);
+</span></span></code></pre></div></li>
+</ol>
+<p>Example usage:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> React, { useState } from <span style="color:#b44">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> Counter() {
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">// Defining state variable &#39;count&#39; and its updater &#39;setCount&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#a2f;font-weight:bold">const</span> [count, setCount] <span style="color:#666">=</span> useState(<span style="color:#666">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">p</span>&gt;Count<span style="color:#666">:</span> {count}&lt;/<span style="color:#008000;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>      {<span style="color:#080;font-style:italic">/* Updating state on button click */</span>}
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">button</span> <span style="color:#b44">onClick</span><span style="color:#666">=</span>{() =&gt; setCount(count <span style="color:#666">+</span> <span style="color:#666">1</span>)}&gt;Increment&lt;/<span style="color:#008000;font-weight:bold">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">export</span> <span style="color:#a2f;font-weight:bold">default</span> Counter;
+</span></span></code></pre></div><p>The <code>useState</code> hook provides a simple and effective way to introduce and manage state in functional components, enabling dynamic and interactive UIs.</p>
+<h2 id="useeffect-hook">useEffect Hook <a href="#useeffect-hook" class="anchor">🔗</a></h2><p>The <code>useEffect</code> hook is essential for performing side effects in functional components. It allows you to execute code in response to component lifecycle events. Key points about <code>useEffect</code> include:</p>
+<ol>
+<li>
+<p><strong>Lifecycle Events:</strong></p>
+<ul>
+<li><code>useEffect</code> is used to manage side effects in functional components, such as data fetching, subscriptions, or manually changing the DOM.</li>
+</ul>
+</li>
+<li>
+<p><strong>Component Did Mount:</strong></p>
+<ul>
+<li>Code inside <code>useEffect</code> runs after the initial render, mimicking the behavior of <code>componentDidMount</code> in class components.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>useEffect(() =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">// Code to run after the initial render
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>}, []);
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Component Did Update:</strong></p>
+<ul>
+<li><code>useEffect</code> also runs after every update, similar to <code>componentDidUpdate</code>. You can conditionally execute code based on changes in specific dependencies.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>useEffect(() =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">// Code to run after each render/update
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>}, [dependency]);
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Component Will Unmount:</strong></p>
+<ul>
+<li>Clean-up code can be placed inside <code>useEffect</code> to run when the component is about to unmount, similar to <code>componentWillUnmount</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>useEffect(() =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// Clean-up code
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  };
+</span></span><span style="display:flex;"><span>}, []);
+</span></span></code></pre></div></li>
+<li>
+<p><strong>Async Operations:</strong></p>
+<ul>
+<li><code>useEffect</code> supports asynchronous operations. You can declare an asynchronous function inside it and perform async tasks.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span>useEffect(() =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">const</span> fetchData <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">async</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#080;font-style:italic">// Async code
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  fetchData();
+</span></span><span style="display:flex;"><span>}, []);
+</span></span></code></pre></div></li>
+</ol>
+<p>Example usage:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> React, { useEffect, useState } from <span style="color:#b44">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> DataFetcher() {
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">// State to hold fetched data
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#a2f;font-weight:bold">const</span> [data, setData] <span style="color:#666">=</span> useState(<span style="color:#a2f;font-weight:bold">null</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">// Fetch data after the component mounts
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  useEffect(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">const</span> fetchData <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">async</span> () =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a2f;font-weight:bold">try</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a2f;font-weight:bold">const</span> response <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">await</span> fetch(<span style="color:#b44">&#34;https://api.example.com/data&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a2f;font-weight:bold">const</span> result <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">await</span> response.json();
+</span></span><span style="display:flex;"><span>        setData(result);
+</span></span><span style="display:flex;"><span>      } <span style="color:#a2f;font-weight:bold">catch</span> (error) {
+</span></span><span style="display:flex;"><span>        console.error(<span style="color:#b44">&#34;Error fetching data:&#34;</span>, error);
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    fetchData();
+</span></span><span style="display:flex;"><span>  }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">h1</span>&gt;Fetched Data&lt;/<span style="color:#008000;font-weight:bold">h1</span>&gt;
+</span></span><span style="display:flex;"><span>      {data <span style="color:#666">?</span> &lt;<span style="color:#008000;font-weight:bold">p</span>&gt;{data}&lt;/<span style="color:#008000;font-weight:bold">p</span>&gt; <span style="color:#666">:</span> &lt;<span style="color:#008000;font-weight:bold">p</span>&gt;Loading...&lt;/<span style="color:#008000;font-weight:bold">p</span>&gt;}
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">export</span> <span style="color:#a2f;font-weight:bold">default</span> DataFetcher;
+</span></span></code></pre></div><p>The <code>useEffect</code> hook provides a flexible way to handle side effects in functional components, making it a powerful tool for managing the lifecycle of your components.</p>
+<h2 id="useref-hook">useRef Hook <a href="#useref-hook" class="anchor">🔗</a></h2><p>Ref always stores the current value and it doesn&rsquo;t re-render. The hook can be used to:</p>
+<ol>
+<li>Access DOM Elements</li>
+<li>Hold Mutable Values without Triggering Re-renders</li>
+<li>Store and Persisting Values Across Renders</li>
+</ol>
+<p>Example usage:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> React, { useRef, useEffect } from <span style="color:#b44">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> MyComponent() {
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">// Creating a ref to store a reference to an input element
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#a2f;font-weight:bold">const</span> inputRef <span style="color:#666">=</span> useRef(<span style="color:#a2f;font-weight:bold">null</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">// Using useEffect to focus on the input element after the component mounts
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  useEffect(() =&gt; {
+</span></span><span style="display:flex;"><span>    inputRef.current.focus();
+</span></span><span style="display:flex;"><span>  }, []);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>        Type something<span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>        {<span style="color:#080;font-style:italic">/* Associating the input element with the useRef */</span>}
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#008000;font-weight:bold">input</span> <span style="color:#b44">ref</span><span style="color:#666">=</span>{inputRef} <span style="color:#b44">type</span><span style="color:#666">=</span><span style="color:#b44">&#34;text&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#008000;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">p</span>&gt;Click outside the input to see the focus effect.&lt;/<span style="color:#008000;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">export</span> <span style="color:#a2f;font-weight:bold">default</span> MyComponent;
+</span></span></code></pre></div><h2 id="usememo-hook">useMemo Hook <a href="#usememo-hook" class="anchor">🔗</a></h2><p>It&rsquo;s all about memoization in performance gain. It works like useEffect.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> React, { useState, useMemo } from <span style="color:#b44">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> SquareCalculator({ number }) {
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">// State to hold the input value
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#a2f;font-weight:bold">const</span> [input, setInput] <span style="color:#666">=</span> useState(<span style="color:#666">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">// Memoized function to calculate the square of a number
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#a2f;font-weight:bold">const</span> calculateSquare <span style="color:#666">=</span> useMemo(() =&gt; {
+</span></span><span style="display:flex;"><span>    console.log(<span style="color:#b44">&#39;Calculating square...&#39;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">return</span> () =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a2f;font-weight:bold">return</span> input <span style="color:#666">*</span> input;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>  }, [input]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">h2</span>&gt;Square Calculator&lt;/<span style="color:#008000;font-weight:bold">h2</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>        Enter a number<span style="color:#666">:</span>
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#008000;font-weight:bold">input</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#b44">type</span><span style="color:#666">=</span><span style="color:#b44">&#34;number&#34;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#b44">value</span><span style="color:#666">=</span>{input}
+</span></span><span style="display:flex;"><span>          <span style="color:#b44">onChange</span><span style="color:#666">=</span>{(e) =&gt; setInput(<span style="color:#a2f">parseInt</span>(e.target.value, <span style="color:#666">10</span>))}
+</span></span><span style="display:flex;"><span>        /&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#008000;font-weight:bold">label</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>        Square <span style="color:#a2f;font-weight:bold">of</span> {input}<span style="color:#666">:</span> {calculateSquare()}
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#008000;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">export</span> <span style="color:#a2f;font-weight:bold">default</span> SquareCalculator;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// The calculateSquare function is memoized using useMemo. It will only be recalculated when the input value changes.
+</span></span></span></code></pre></div><h2 id="usecallback-hook">useCallback Hook <a href="#usecallback-hook" class="anchor">🔗</a></h2><p>It works like useMemo, but to memoize functions</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> React, { useState, useCallback } from <span style="color:#b44">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> ParentComponent() {
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">const</span> [count, setCount] <span style="color:#666">=</span> useState(<span style="color:#666">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">// Without useCallback, this function would be recreated on every render
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#a2f;font-weight:bold">const</span> handleClick <span style="color:#666">=</span> useCallback(() =&gt; {
+</span></span><span style="display:flex;"><span>    setCount(count <span style="color:#666">+</span> <span style="color:#666">1</span>);
+</span></span><span style="display:flex;"><span>  }, [count]); <span style="color:#080;font-style:italic">// Dependency array specifies that the function depends on &#39;count&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">p</span>&gt;Count<span style="color:#666">:</span> {count}&lt;/<span style="color:#008000;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>      {<span style="color:#080;font-style:italic">/* ChildComponent receives the memoized handleClick function */</span>}
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">ChildComponent</span> <span style="color:#b44">onClick</span><span style="color:#666">=</span>{handleClick} /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// ChildComponent renders a button that triggers the onClick function
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#a2f;font-weight:bold">function</span> ChildComponent({ onClick }) {
+</span></span><span style="display:flex;"><span>  console.log(<span style="color:#b44">&#39;ChildComponent rendered&#39;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> &lt;<span style="color:#008000;font-weight:bold">button</span> <span style="color:#b44">onClick</span><span style="color:#666">=</span>{onClick}&gt;Increment&lt;/<span style="color:#008000;font-weight:bold">button</span>&gt;;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">export</span> <span style="color:#a2f;font-weight:bold">default</span> ParentComponent;
+</span></span></code></pre></div><h2 id="custom-hooks">Custom Hooks <a href="#custom-hooks" class="anchor">🔗</a></h2><p>The primary purpose of a custom hook is to encapsulate and reuse logic in functional components. Custom hooks provide a way to extract and share stateful logic, side effects, or any other functionality between multiple components without duplicating code.</p>
+<p>Here&rsquo;s a simple example of a custom hook that manages a piece of state and provides a function to toggle its value:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> { useState } from <span style="color:#b44">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// Custom hook for managing a toggle state
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#a2f;font-weight:bold">function</span> useToggle(initialValue <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">false</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">const</span> [value, setValue] <span style="color:#666">=</span> useState(initialValue);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">const</span> toggle <span style="color:#666">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>    setValue((prevValue) =&gt; <span style="color:#666">!</span>prevValue);
+</span></span><span style="display:flex;"><span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> [value, toggle];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">export</span> <span style="color:#a2f;font-weight:bold">default</span> useToggle;
+</span></span></code></pre></div><p>You can then use this custom hook in your components:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-react" data-lang="react"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> React from <span style="color:#b44">&#39;react&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">import</span> useToggle from <span style="color:#b44">&#39;./useToggle&#39;</span>; <span style="color:#080;font-style:italic">// Importing the custom hook
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> ToggleComponent() {
+</span></span><span style="display:flex;"><span>  <span style="color:#080;font-style:italic">// Using the custom hook to manage a toggle state
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>  <span style="color:#a2f;font-weight:bold">const</span> [isToggled, toggle] <span style="color:#666">=</span> useToggle(<span style="color:#a2f;font-weight:bold">false</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a2f;font-weight:bold">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">p</span>&gt;Toggle State<span style="color:#666">:</span> {isToggled <span style="color:#666">?</span> <span style="color:#b44">&#39;On&#39;</span> <span style="color:#666">:</span> <span style="color:#b44">&#39;Off&#39;</span>}&lt;/<span style="color:#008000;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#008000;font-weight:bold">button</span> <span style="color:#b44">onClick</span><span style="color:#666">=</span>{toggle}&gt;Toggle&lt;/<span style="color:#008000;font-weight:bold">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#008000;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">export</span> <span style="color:#a2f;font-weight:bold">default</span> ToggleComponent;
+</span></span></code></pre></div><p><mark>Learning in progress</mark></p>
+    </div>
+
+    
+        <div class="tags">
+            
+                <a href="https://notes.bythanni.com/tags/react">react</a>
+            
+        </div>
+    
+    
+    
+
+</section>
+
+
+    </main>
+    
+    <footer id="footer">
+    
+        <div id="social">
+
+
+    <a class="symbol" href="https://github.com/" rel="me" target="_blank">
+        
+        <svg fill="#bbbbbb" width="28" height="28"  viewBox="0 0 72 72" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Github</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Social-Icons---Rounded-Black" transform="translate(-264.000000, -939.000000)">
+            <g id="Github" transform="translate(264.000000, 939.000000)">
+                <path d="M8,72 L64,72 C68.418278,72 72,68.418278 72,64 L72,8 C72,3.581722 68.418278,-8.11624501e-16 64,0 L8,0 C3.581722,8.11624501e-16 -5.41083001e-16,3.581722 0,8 L0,64 C5.41083001e-16,68.418278 3.581722,72 8,72 Z" id="Rounded" fill="#A9B5C2"></path>
+                <path d="M35.9985,13 C22.746,13 12,23.7870921 12,37.096644 C12,47.7406712 18.876,56.7718301 28.4145,59.9584121 C29.6145,60.1797862 30.0525,59.4358488 30.0525,58.7973276 C30.0525,58.2250681 30.0315,56.7100863 30.0195,54.6996482 C23.343,56.1558981 21.9345,51.4693938 21.9345,51.4693938 C20.844,48.6864054 19.2705,47.9454799 19.2705,47.9454799 C17.091,46.4500754 19.4355,46.4801943 19.4355,46.4801943 C21.843,46.6503662 23.1105,48.9634994 23.1105,48.9634994 C25.2525,52.6455377 28.728,51.5823398 30.096,50.9649018 C30.3135,49.4077535 30.9345,48.3460615 31.62,47.7436831 C26.2905,47.1352808 20.688,45.0691228 20.688,35.8361671 C20.688,33.2052792 21.6225,31.0547881 23.1585,29.3696344 C22.911,28.7597262 22.0875,26.3110578 23.3925,22.9934585 C23.3925,22.9934585 25.4085,22.3459017 29.9925,25.4632101 C31.908,24.9285993 33.96,24.6620468 36.0015,24.6515052 C38.04,24.6620468 40.0935,24.9285993 42.0105,25.4632101 C46.5915,22.3459017 48.603,22.9934585 48.603,22.9934585 C49.9125,26.3110578 49.089,28.7597262 48.8415,29.3696344 C50.3805,31.0547881 51.309,33.2052792 51.309,35.8361671 C51.309,45.0917119 45.6975,47.1292571 40.3515,47.7256117 C41.2125,48.4695491 41.9805,49.9393525 41.9805,52.1877301 C41.9805,55.4089489 41.9505,58.0067059 41.9505,58.7973276 C41.9505,59.4418726 42.3825,60.1918338 43.6005,59.9554002 C53.13,56.7627944 60,47.7376593 60,37.096644 C60,23.7870921 49.254,13 35.9985,13" fill="#FFFFFF"></path>
+            </g>
+        </g>
+    </g>
+</svg>
+    </a>
+
+
+</div>
+
+    
+
+    <div class="copyright">
+    
+        © Copyright 2024 Thanni
+    
+    </div>
+
+    
+</footer>
+
+
+
+  </body>
+</html>
