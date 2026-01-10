@@ -40,7 +40,7 @@ params:
   # bio: 🧘🏽‍♂️📚✈️ | Current📍 ~ 🇳🇬
   # bio: 🧘🏽‍♂️💻🎵🎭🎙📸
   # Site Description, used in HTML meat
-  description: Learning and Blog Content
+  description: Quant and SWE Content
 
   ###########################################
   # Optional Configuration
@@ -61,7 +61,7 @@ params:
   # To hidden post summary in home page, you could set `hiddenPostSummaryInHomePage: true`, default is `false`
   hiddenPostSummaryInHomePage: true
   # Website copy write, default: '© Copyright 2021 {params.author}'
-  copyright: © Copyright 2024 Thanni
+  copyright: © Copyright 2026 Thanni
 
   # Extra links in navigation
   links:
